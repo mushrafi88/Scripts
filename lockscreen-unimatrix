@@ -1,0 +1,3 @@
+#!/bin/bash
+
+terminator -e 'unimatrix -c cyan -s 94'

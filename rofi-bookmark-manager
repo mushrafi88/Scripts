@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd ~/Bookmarks
+
+selected=$(basename --suffix=.txt -- *.txt | rofi -dmenu -p "Bookmarks:")
+[[ -z $selected ]] && exit
+
+web_names=$(for i in $(cat "$selected".txt);do python ~/.config/bspwm/bin/domain-name.py "$i"; done | sed s/".com"// | sed s/"www."// |sed s/".org"//)
+
+link=$(cat "$selected".txt | grep $(echo "$web_names" | rofi -dmenu))
+
+#link=$(cat "$selected".txt | rofi -dmenu -p "$selected :")
+[[ -z $link ]] && exit
+
+qutebrowser --target tab "$link" 
+

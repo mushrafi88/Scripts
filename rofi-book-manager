@@ -1,0 +1,28 @@
+#!/bin/bash
+
+cd /mnt/study/Second_year
+
+rofi_menu()
+{
+   curr_choose=$(ls -d */ *.pdf | rofi -dmenu -p "Bookmarks:")
+ }
+
+rofi_menu
+[[ -z $curr_choose ]] && exit
+
+new_choose=$curr_choose
+
+loop()
+{
+	if [[ -d $new_choose ]]; then
+		cd "$new_choose"
+		rofi_menu
+		[[ -z $curr_choose ]] && exit
+		new_choose=$curr_choose
+		loop
+	else 
+		okular "$new_choose"
+	fi
+}
+
+loop

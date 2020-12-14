@@ -1,0 +1,6 @@
+#!/bin/bash
+bspc desktop -f '^7'
+
+terminator -e 'ncmpcpp' &
+terminator -e 'ncmpcpp -s clock' &
+terminator -e 'ncmpcpp -s visualizer' &

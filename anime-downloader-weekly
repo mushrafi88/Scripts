@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+#elaina witch
+youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist --playlist-start 10 -o "~/Videos/Anime/Airing/Majo_no_Tabitabi/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl0t53wDaw_s7IFG7cNLp_BL 
+
+#tonikawa kawaii
+anime dl 'https://animekisa.tv/tonikaku-kawaii' -e 10: -q 1080p --download-dir ~/Videos/Anime/Airing/tonikawa 
+
+#jujutsu-kaisen
+anime dl 'https://animekisa.tv/jujutsu-kaisen' -e 10: -q 1080p --download-dir ~/Videos/Anime/Airing/jujutsu_kaisen 
+
+
+#by-the-grace-of-god
+youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist --playlist-start 10 -o "~/Videos/Anime/Airing/By_the_grace_of_god/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLxSscENEp7JjRhcXt3hp52zWsIcJL6ecv 
+#warrior -of qin
+youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist  -o "~/Videos/Anime/Airing/warrior_of_qin/%(title)s.%(ext)s" --download-archive dl.txt 'https://www.youtube.com/playlist?list=PLBakWosU0sfi84psQjXASSl5-usIkb4aV' 
+#heaven official
+youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist  -o "~/Videos/Anime/Airing/heaven_official/%(title)s.%(ext)s" --download-archive dl.txt 'https://www.youtube.com/playlist?list=PLBakWosU0sfj1vJbqmi-Eyh3rjfEOvQGX' 
+
+
+#mahouka s2
+anime dl -c 3 -e 10: -q 1080p --download-dir ~/Videos/Anime/Airing/Mahouka_koukou_no_Rettousei_Raihounsha-hen/ 'mahouka' 
+
+#our_last-crusade
+anime dl -c 2 -e 11: -q 1080p --download-dir ~/Videos/Anime/Airing/our_last_crusade/ 'kimi to boku no saigo' 
+
+
+
+#akudama drive
+anime dl -c 1 -e 10: -q 1080p --download-dir ~/Videos/Anime/Airing/Akudama_Drive/ 'akudama drive'

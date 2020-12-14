@@ -1,0 +1,25 @@
+#!/bin/bash
+
+mkdir -p /mnt/media_m/Music/{liked\ videos\ from\ youtube/might_need_trimming,Anime\ op\ \&\ ed/might\ need\ trimming} 
+mkdir -p /mnt/media_m/Music/Selection/{liked\ videos\ from\ youtube/might_need_trimming,Anime\ op\ \&\ ed/might\ need\ trimming} 
+
+
+cd /mnt/media_m/Music/liked\ videos\ from\ youtube/might_need_trimming 
+youtube-dl -ci  -f 'bestaudio[ext=m4a]' --playlist-end 20 --embed-thumbnail --download-archive dl.txt  -o "%(title)s.%(ext)s" --cookies newcookiefile.txt https://www.youtube.com/playlist\?list\=LL8597xVphIOE5AaLJLlJvFg
+source thumbnail-adder
+for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/liked\ videos\ from\ youtube/might_need_trimming/ ;done
+for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Play/ ;done
+
+
+cd /mnt/media_m/Music/Anime\ op\ \&\ ed/might\ need\ trimming
+youtube-dl -ci  -f 'bestaudio[ext=m4a]' --playlist-end 20 --embed-thumbnail --download-archive dl.txt  -o "%(title)s.%(ext)s" https://www.youtube.com/playlist?list=PLuLW3E9NVjakix7eyfBRb-tTUy3kIjOsH 
+source thumbnail-adder
+for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Anime\ op\ \&\ ed/might\ need\ trimming/ ;done
+for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Play/ ;done
+
+
+cd /home/venerable_white 
+
+mpc update
+mpc clear
+mpc add Music/Selection/Play/  

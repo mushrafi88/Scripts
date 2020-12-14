@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+
+
+rofi_command="rofi -theme ~/.config/rofi/adi1090-themes/themes/powermenu.rasi"
+uptime=$(uptime -p | sed -e 's/up //g' |sed -e 's/hours/h/g' | sed -e 's/minutes/min/g')
+#mem=$( free -h | grep -i mem | awk -F ' ' '{print $3}')
+cpu=$(sh ~/.config/bspwm/bin/usedcpu)
+memory=$(sh ~/.config/bspwm/bin/usedram)
+
+# Options
+shutdown="Shut Down"
+reboot="Reboot"
+lock=""
+suspend="Suspend"
+logout=""
+
+# Variable passed to rofi
+#options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
+options="$shutdown\n$reboot\n$suspend"
+chosen="$(echo -e "$options" | $rofi_command -p "$uptime  $cpu  $memory " -dmenu -selected-row 2)"
+case $chosen in
+    $shutdown)
+        ans=$($HOME/.config/bspwm/bin/rofi-confirm)
+        if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+        killall -9 zoom pcmanfm dunst sxhkd xsettingsd dunst okular qutebrowser xfce4-power-manager discord telegram-desktop qbittorrent megasync persepolis firefox-beta stremio google-chrome-unstable thunar transmission-gtk kdeconnect-cli
+        systemctl poweroff
+        elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+        exit
+        rofi -theme ~/.config/rofi/adi1090-themes/themes/askpass.rasi -e "Available Options  -  yes / y / no / n"
+        fi        
+        ;;
+    $reboot)
+        ans=$($HOME/.config/bspwm/bin/rofi-confirm)
+        if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+        killall -9 zoom pcmanfm dunst sxhkd xsettingsd dunst okular qutebrowser xfce4-power-manager discord telegram-desktop qbittorrent megasync persepolis firefox-beta stremio google-chrome-unstable thunar transmission-gtk kdeconnect-cli
+        systemctl reboot
+        elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+        exit
+        rofi -theme ~/.config/rofi/adi1090-themes/themes/askpass.rasi -e "Available Options  -  yes / y / no / n"
+        fi        
+        ;;
+#    $lock)
+#        sh ~/.config/bspwm/bin/unimatrix-ss
+#        ;;
+    $suspend)
+        mpc -q pause
+        amixer set Master mute
+        systemctl suspend
+        ;;
+#    $logout)
+#        bspc quit
+#        ;;
+esac
+

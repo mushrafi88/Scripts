@@ -1,0 +1,10 @@
+#!/bin/bash
+
+bspc desktop -f '^5'
+
+#terminator --new-tab -e gotop &
+terminator --new-tab -e nvtop &
+terminator --new-tab -e htop &
+terminator --new-tab -e 'sudo bandwhich' &
+terminator --new-tab -e 'sudo ps_mem -w 1' &
+#working except neofetch

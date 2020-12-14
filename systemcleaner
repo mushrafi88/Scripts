@@ -1,0 +1,13 @@
+#!/bin/bash
+
+yes | yay -Scc
+paccache -r
+
+yes | yay -Rns $(yay -Qtdq)
+rm -rf ~/.cache/*
+
+rm -rf ~/.stremio-server/stremio-cache/*
+rm -rf ~/.config/mpv/watch_later/*
+
+
+betterlockscreen -u ~/Pictures/wallpapers/light/0023.jpg 

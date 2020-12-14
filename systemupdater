@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+yay -Syyu
+#sudo -H pip install --upgrade youtube-dl
+pip install anime-downloader -U
+pip install manga-py -U
+systemcleaner

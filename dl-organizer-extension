@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+#images
+for i in *.jpeg *.jpg *.png *.gif *.webp; do mv -- "$i" "images/$i" ;done
+
+#torrents
+for i in *.torrent;do mv -- "$i" "torrents/$i" ;done
+
+#pdf
+for i in *.pdf *.csv *.docx *.djvu *.html *.xml *.txt;do mv -- "$i" "pdf/$i" ;done
+
+#archives
+for i in *.tar.xz *.tar.gz *.rar *.zip *.xml.gz *.iso; do mv -- "$i" "archives/$i" ;done
+
+#apk
+
+for i in *.apk *.AppImage;do mv -- "$i" "apk/$i" ;done
+
+# codes
+for i in *.py *.ipynb ;do mv -- "$i" "codes/$i" ;done
+
+#videos
+for i in *.mp4 *.mkv;do mv -- "$i" "videos/$i" ;done

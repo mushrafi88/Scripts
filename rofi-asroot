@@ -1,0 +1,33 @@
+#!/bin/bash
+
+
+DIR="$HOME/.config/bspwm"
+
+# Apps
+files="Pcmanfm"
+editor="Sublime -text"
+disk="Gnome-Disks"
+gparted="Gparted"
+timeshift="Timeshift"
+# Variable passed to rofi
+options="$files\n$editor\n$disk\n$timeshift\n$gparted"
+
+chosen="$(echo -e "$options" | rofi -dmenu -p "Run as root(#)")"
+case $chosen in
+    $files)
+        apps_as_root 'pcmanfm'
+        ;;
+    $editor)
+        apps_as_root 'subl3'
+        ;;
+    $disk)
+        apps_as_root 'gnome-disks'
+        ;;
+    $timeshift)
+        apps_as_root 'timeshift-gtk'
+        ;; 
+    $gparted)
+        apps_as_root 'gpartedbin'
+        ;;    
+esac
+#[[ -z $chosen ]] && exit

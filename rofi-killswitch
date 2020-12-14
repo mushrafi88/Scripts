@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#name of process
+a=$(rofi -dmenu -p "enter process name")
+[[ -z $a ]] && exit
+
+#name of pid of that process
+b=$(ps -aux | grep "$a" | grep -v grep | awk '{print $11}' | rofi -dmenu -p "choose process id")
+[[ -z $b ]] && exit
+
+#show process name
+c=$(ps -aux | grep "$b" | grep -v grep | awk '{print $2}')
+#kill process
+kill "$c"

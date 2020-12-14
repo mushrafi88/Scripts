@@ -1,0 +1,28 @@
+#!/bin/sh 
+
+
+cd ~/Pictures/wallpapers/"$1"
+
+#echo "$(ls *.jpeg *.jpg *.png)" > wallpapers.txt
+#echo "$(ls *.jpeg *.jpg *.png)" | shuf > wallpapers.txt
+#find ./ -type f | shuf > wallpapers.txt
+
+#feh --no-fehbg --bg-scale $(find ~/Pictures/wallpapers -type f | shuf -n 1)
+
+#n=$(find ~/Pictures/wallpapers -type f |shuf -n 1 |sed 's/[^0-9]*//g')
+#((n=n+1))
+
+if [[ "$1" == "arch" ]]; then
+	feh --no-bg --bg-scale --randomize ~/Pictures/wallpapers/arch/
+else
+	if [[ -s wallpapers.txt ]]; then
+		var=$(shuf -n 1 wallpapers.txt)
+		echo $var >> copy.txt
+		feh --no-fehbg --bg-scale $var
+		sed -i /$var/d wallpapers.txt
+	else
+	    rm -f wallpapers.txt copy.txt
+	    echo "$(ls *.jpeg *.jpg *.png)" | shuf > wallpapers.txt        	
+	fi
+fi
+

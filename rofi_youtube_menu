@@ -1,0 +1,35 @@
+#!/bin/bash
+
+script_name=${BASH_SOURCE[0]}
+for pid in $(pidof -x $script_name); do
+    if [ $pid != $$ ]; then
+        kill -9 $pid
+    fi 
+done
+
+killswitch "youtube_name_search.py"
+killswitch "youtube_url_search.py"
+killswitch "rofi -dmenu"
+
+a=$(rofi -dmenu -p "Search youtube")
+[[ -z $a ]] && exit
+
+b=$(python ~/.config/bspwm/bin/youtube_name_search.py "$a" | rofi -dmenu -p "$a")
+[[ -z $b ]] && exit
+
+killswitch "youtube_name_search.py"
+
+c=$(python ~/.config/bspwm/bin/youtube_url_search.py "$a" "$b")
+
+notify-send -t 3000 --icon=video-television "playing video" "$b \n $c" 
+
+#echo "$c"
+
+mpv --profile=youtube "$c"
+
+
+killswitch "youtube_name_search.py"
+#killswitch "youtube_url_search.py"
+#killswitch "rofi -dmenu"
+
+exit 0
