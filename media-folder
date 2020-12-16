@@ -4,6 +4,9 @@ bspc desktop -f '^7'
 FILE1='/mnt/media_m/Anime'
 FILE2='/mnt/media_m/Tv-Series/'
 FILE3='/mnt/media_m/Movies'
-pcmanfm -n $FILE1 & pcmanfm -n $FILE2 & pcmanfm -n $FILE3
 
+for i in $FILE1 $FILE2 $FILE3
+do
+	alacritty -e ranger $i &
+done	
 exit 0

@@ -8,6 +8,7 @@ rm -rf ~/.cache/*
 
 rm -rf ~/.stremio-server/stremio-cache/*
 rm -rf ~/.config/mpv/watch_later/*
+rm -rf ~/.thumbnails/*
 
 
-betterlockscreen -u ~/Pictures/wallpapers/light/0023.jpg 
+betterlockscreen -u ~/Pictures/wallpapers/dark/0037.jpeg 
