@@ -2,22 +2,22 @@
 
 #dotfiles
 
-for i in alacritty anime-downloader bspwm dunst flameshot gtk-2.0 gtk-3.0 lf mpv  pcmanfm picom polybar qt5ct qutebrowser rofi sxhkd terminator zathura
-do cp -r ~/.config/"$i"/. /mnt/work/git/dotfiles/"$i"
+for i in alacritty anime-downloader bspwm dunst flameshot gtk-2.0 gtk-3.0 mpv  pcmanfm picom polybar qt5ct qutebrowser rofi sxhkd terminator zathura ranger
+do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/dotfiles/"$i"
 done
 
-cp -r ~/.config/okularrc /mnt/work/git/dotfiles
-cp -r ~/.config/okularpartrc /mnt/work/git/dotfiles
-cp -r ~/.Xresources /mnt/work/git/dotfiles
-cp -r ~/.Xresources /mnt/work/git/marble
+ cp -r -u -v ~/.config/okularrc /mnt/work/git/dotfiles
+ cp -r -u -v ~/.config/okularpartrc /mnt/work/git/dotfiles
+ cp -r -u -v ~/.Xresources /mnt/work/git/dotfiles
+ cp -r -u -v ~/.Xresources /mnt/work/git/marble
 
 
-cp -r ~/.config/bspwm/bin/* /mnt/work/git/bin/
-cp -r ~/.config/bspwm/bin/* /mnt/work/git/dotfiles/bin/
+ cp -r -u -v ~/.config/bspwm/bin/* /mnt/work/git/bin/
+ cp -r -u -v ~/.config/bspwm/bin/* /mnt/work/git/dotfiles/bin/
 
 
 for i in alacritty  bspwm  gtk-2.0  gtk-3.0  picom  polybar  rofi  sxhkd
-do cp -r ~/.config/"$i"/. /mnt/work/git/marble/"$i"
+do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/marble/"$i"
 done
 
 

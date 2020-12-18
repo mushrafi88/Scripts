@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 
-yay -Syyu
 #sudo -H pip install --upgrade youtube-dl
+yay -Y --gendb
+
+yay -Syyu --devel
+
 pip install anime-downloader -U
 pip install manga-py -U
+
+a=$(youtube-dl --version)
+b=$(echo $(pip list |grep "youtube-dl" | awk '{print $2}'))
+
+if [[ $a != $b ]]; then
+	pip install youtube-dl -U 
+fi
+
 systemcleaner
+

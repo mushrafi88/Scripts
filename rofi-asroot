@@ -9,8 +9,9 @@ editor="Sublime -text"
 disk="Gnome-Disks"
 gparted="Gparted"
 timeshift="Timeshift"
+ranger_="Ranger"
 # Variable passed to rofi
-options="$files\n$editor\n$disk\n$timeshift\n$gparted"
+options="$files\n$editor\n$disk\n$timeshift\n$gparted\n$ranger_"
 
 chosen="$(echo -e "$options" | rofi -dmenu -p "Run as root(#)")"
 case $chosen in
@@ -29,5 +30,8 @@ case $chosen in
     $gparted)
         apps_as_root 'gpartedbin'
         ;;    
+    $ranger_)
+        apps_as_root 'ranger-file-manager'
+        ;;
 esac
 #[[ -z $chosen ]] && exit

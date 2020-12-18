@@ -1,5 +1,10 @@
 #!/bin/bash
 
+mkdir ~/tmp
+cp -r ~/.cache/p10k-* ~/tmp/
+cp -r ~/.cache/gitstatus ~/tmp/
+
+
 yes | yay -Scc
 paccache -r
 
@@ -9,6 +14,9 @@ rm -rf ~/.cache/*
 rm -rf ~/.stremio-server/stremio-cache/*
 rm -rf ~/.config/mpv/watch_later/*
 rm -rf ~/.thumbnails/*
+
+cp -r ~/tmp/*  ~/.cache/
+rm -rf ~/tmp 
 
 
 betterlockscreen -u ~/Pictures/wallpapers/dark/0037.jpeg 
