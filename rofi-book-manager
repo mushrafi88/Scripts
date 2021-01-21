@@ -4,7 +4,7 @@ cd /mnt/study/Second_year
 
 rofi_menu()
 {
-   curr_choose=$(ls -d */ *.pdf | rofi -dmenu -p "Bookmarks:")
+   curr_choose=$(ls -d */ *.pdf *.djvu| rofi -dmenu -p "Bookmarks:")
  }
 
 rofi_menu

@@ -2,4 +2,4 @@
 
 command=$(rofi -dmenu -p "write command")
 
-alacritty -e $command
+kitty -e $command

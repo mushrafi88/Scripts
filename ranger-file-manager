@@ -1,3 +1,3 @@
 #!/bin/bash
 
-alacritty -e ranger
+kitty -e ranger

@@ -1,10 +1,9 @@
 #!/bin/bash
 bspc desktop -f '^7'
 
-alacritty -e ncmpcpp & 
+kitty -e ncmpcpp & 
 sleep 300 &
-alacritty -e ncmpcpp -s clock &
+kitty -e ncmpcpp -s clock &
 sleep 300 &
-alacritty -e ncmpcpp -s visualizer &
-sleep 300 &
-exit
+kitty -e ncmpcpp -s visualizer &
+

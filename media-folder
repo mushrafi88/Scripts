@@ -7,6 +7,6 @@ FILE3='/mnt/media_m/Movies'
 
 for i in $FILE1 $FILE2 $FILE3
 do
-	alacritty -e ranger $i &
+	kitty -e ranger $i &
 done	
 exit 0

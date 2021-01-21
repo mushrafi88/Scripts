@@ -3,11 +3,11 @@
 bspc desktop -f '^5'
 
 #terminator --new-tab -e gotop &
-alacritty -e htop &
+kitty -e htop &
 sleep 300 &
-alacritty -e nvtop &
+kitty -e nvtop &
 sleep 300 &
-alacritty -e sudo bandwhich &
+kitty -e sudo bandwhich &
 sleep 300 &
-alacritty -e sudo ps_mem -w 1 &
+kitty -e sudo ps_mem -w 1 &
 #working except neofetch

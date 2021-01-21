@@ -17,9 +17,7 @@ source thumbnail-adder
 for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Anime\ op\ \&\ ed/might\ need\ trimming/ ;done
 for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Play/ ;done
 
-
-cd /home/venerable_white 
-
-mpc update
+cd ~
 mpc clear
+mpc update
 mpc add Music/Selection/Play/  

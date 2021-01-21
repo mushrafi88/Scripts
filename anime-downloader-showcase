@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+bspc desktop -f '^1'
+
+eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME bspwm)/environ)";
+
+notify-send -t 15000 --icon=video-television "downloading anime"  
+
+kitty -e /home/venerable_white/.config/bspwm/bin/anime-downloader-weekly
+
+notify-send -t 9000 --icon=video-television "finished downloading anime" 
+sleep 4s 
+

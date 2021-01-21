@@ -5,7 +5,9 @@ yay -Y --gendb
 
 yay -Syyu --devel
 
-pip install anime-downloader -U
+#remember its installed like this
+sudo pip3 install -U git+https://github.com/vn-ki/anime-downloader.git
+
 pip install manga-py -U
 
 a=$(youtube-dl --version)

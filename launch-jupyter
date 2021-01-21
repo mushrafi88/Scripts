@@ -3,7 +3,7 @@
 bspc desktop -f '^1'
 
 
-alacritty -e python ~/.local/bin/jupyter-lab &
+kitty -e python ~/.local/bin/jupyter-lab &
 
 sleep 7s
 bspc desktop -f '^2'
