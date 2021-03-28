@@ -3,8 +3,8 @@
 bspc desktop -f '^1'
 
 
-kitty -e python ~/.local/bin/jupyter-lab &
+kitty -e jupyter lab &
 
-sleep 7s
+sleep 2s &&
 bspc desktop -f '^2'
 sh ~/.local/share/kite/kited &

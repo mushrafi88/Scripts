@@ -1,19 +1,11 @@
 import sys
-from youtubesearchpython import SearchVideos
+from youtube_search import YoutubeSearch
 
 search_term = sys.argv[1]
 sorted_term = sys.argv[2]
 
 
-search = SearchVideos(search_term, offset = 1, mode = "json", max_results = 20)
-
-#json_str = search.result()
-titles = search.titles
-links = search.links
-#view = search.views
-#thumbnail_link = search.thumbnails
-
-d = dict(zip(titles,links))
-
-print(d[sorted_term])
-
+results = YoutubeSearch(search_term, max_results=13).to_dict()
+for i in range(13):
+    if results[i]['title'] == sorted_term:
+    	print('https://www.youtube.com'+results[i]['url_suffix'])    

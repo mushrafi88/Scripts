@@ -1,12 +1,10 @@
 import sys
-from youtubesearchpython import SearchVideos
+from youtube_search import YoutubeSearch
 
 search_term = sys.argv[1]
 
-search = SearchVideos(search_term, offset = 1, mode = "json", max_results = 20)
 
-#json_str = search.result()
-titles = search.titles
+results = YoutubeSearch(search_term, max_results=13).to_dict()
+for i in range(13):
+    print(results[i]['title'])
 
-for title in titles:
-    print(title)

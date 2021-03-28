@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+bspc desktop -f '^1'
+
+cd /mnt/work/tor-browser_en-US/Browser
+
+notify-send -t 9000 --icon=video-television "loading tor-browser_en-US" 
+
+./start-tor-browser

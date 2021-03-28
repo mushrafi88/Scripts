@@ -1,0 +1,33 @@
+#!/bin/bash
+
+rss-sorted | head -n 30 > /home/venerable_white/.sfeed/notification/new_feed.txt
+
+diff /home/venerable_white/.sfeed/notification/old_feed.txt /home/venerable_white/.sfeed/notification/new_feed.txt |grep ">"|cut -c 3- > /home/venerable_white/.sfeed/notification/update.txt 
+
+noti=$(cat /home/venerable_white/.sfeed/notification/update.txt | awk '{$1=$2=$3=$4=$5=$(NF)=""; print $0}')
+
+noti=${noti//Upwork/}
+
+noti=${noti//Jobs/}
+
+#noti=$(IFS='-'; set -- $noti; printf "%s\n" "$@")
+
+# Script to split a string based on the delimiter
+
+#notify-send -t 20000 --icon=video-television "$noti" 
+
+echo $noti > /home/venerable_white/.sfeed/notification/update.txt
+
+
+my_string=$(cat /home/venerable_white/.sfeed/notification/update.txt)
+
+IFS='-' read -ra my_array <<< "$my_string"
+
+#Print the split string
+for i in "${my_array[@]}"
+do
+    notify-send -t 30000 --icon=video-television "$i" 
+done
+
+
+cat /home/venerable_white/.sfeed/notification/new_feed.txt > /home/venerable_white/.sfeed/notification/old_feed.txt

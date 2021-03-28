@@ -3,10 +3,20 @@
 #sudo -H pip install --upgrade youtube-dl
 yay -Y --gendb
 
+notify-send -t 9000 --icon=video-television "input password local repo done" 
+
 yay -Syyu --devel
 
+notify-send -t 9000 --icon=video-television "input password git done" 
+
+
 #remember its installed like this
-sudo pip3 install -U git+https://github.com/vn-ki/anime-downloader.git
+pip install -U git+https://github.com/vn-ki/anime-downloader.git
+
+###################
+#sudo pip install  jupyterlab-lsp -U  
+#sudo pip install "jupyterlab-kite>=2.0.2"
+#pip install -U git+https://github.com/krassowski/python-language-server.git@main
 
 pip install manga-py -U
 
