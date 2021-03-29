@@ -42,9 +42,6 @@ anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/wonder_egg/ep
 
 
 
-#sasageyo
-anime dl -c 1 -p tenshi.moe -e $((1+$(cat /mnt/media_m/Anime/Airing/shingeki_no_kyojin/episode.txt))): --download-dir  /mnt/media_m/Anime/Airing/shingeki_no_kyojin/ 'shingeki no kyojin final'
-
 
 
 
