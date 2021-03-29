@@ -2,21 +2,29 @@
 
 #dotfiles
 
-for i in alacritty anime-downloader bspwm dunst flameshot gtk-2.0 gtk-3.0 mpv  pcmanfm picom polybar qt5ct qutebrowser rofi sxhkd terminator zathura ranger kitty
+for i in alacritty anime-downloader bspwm dunst flameshot gtk-2.0 gtk-3.0 mpv  pcmanfm picom polybar qt5ct qutebrowser rofi sxhkd terminator zathura ranger kitty ncmpcpp newboat nvim sfeed transmission
 do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/dotfiles/"$i"
 done
-
- cp -r -u -v ~/.config/okularrc /mnt/work/git/dotfiles
- cp -r -u -v ~/.config/okularpartrc /mnt/work/git/dotfiles
- cp -r -u -v ~/.Xresources /mnt/work/git/dotfiles
- cp -r -u -v ~/.Xresources /mnt/work/git/marble
+ cp -r -u -v ~/.config/mimeapps.list /mnt/work/git/dotfiles/
+ cp -r -u -v ~/.config/okularrc /mnt/work/git/dotfiles/
+ cp -r -u -v ~/.config/okularpartrc /mnt/work/git/dotfiles/
+ cp -r -u -v ~/.Xresources /mnt/work/git/dotfiles/
+ cp -r -u -v ~/.Xresources /mnt/work/git/marble/
 
 
  cp -r -u -v ~/.config/bspwm/bin/* /mnt/work/git/bin/
  cp -r -u -v ~/.config/bspwm/bin/* /mnt/work/git/dotfiles/bin/
 
+cp -r -u -v ~/.sfeed /mnt/work/git/various-files/
+cp -r -u -v ~/Bookmarks /mnt/work/git/various-files/
 
-for i in alacritty  bspwm  gtk-2.0  gtk-3.0  picom  polybar  rofi  sxhkd kitty
+now=$(date +"%m_%d_%Y")
+
+yay -Qe | awk '{print $1}' > /mnt/work/git/various-files/Installed-lists/installed_crr_$now.txt
+
+pip freeze > /mnt/work/git/various-files/Installed-lists/python_installed_$now.txt
+
+for i in alacritty  bspwm  gtk-2.0  gtk-3.0  picom  polybar  rofi  sxhkd kitty dunst ranger qt5ct ncmpcpp
 do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/marble/"$i"
 done
 
@@ -26,3 +34,6 @@ rm -rf /mnt/work/git/dotfiles/mpv/watch_later
 rm -rf /mnt/work/git/dotfiles/qutebrowser/backup
 rm -rf /mnt/work/git/marble/bspwm/bin
 rm -rf /mnt/work/git/dotfiles/bspwm/bin
+rm -rf /mnt/work/git/dotfiles/transmission/torrents
+rm -rf /mnt/work/git/dotfiles/transmission/blocklists
+rm -rf /mnt/work/git/dotfiles/transmission/resume

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+
+export PATH="${PATH}:$HOME/.local/bin"
+
 #1080p no selection
 #twist.moe(500mb)
 #tenshi.moe
@@ -14,10 +17,6 @@
 
 # to get the highest episode number
 # ls folder | grep -Eo '[0-9]{1,4}.mp4' | sed 's/\..*$//' | cut -d: -f 2 | sort -n | tail -n 1
-
-
-#kemono
-youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist  -o "/mnt/media_m/Anime/Airing/kimono_jihen/%(title)s.%(ext)s" --download-archive dl.txt 'https://www.youtube.com/playlist?list=PLwLSw1_eDZl1YS_pINBRcstuSCSgO4EGj' 
 
 
 
