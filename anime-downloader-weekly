@@ -27,23 +27,11 @@ export PATH="${PATH}:$HOME/.local/bin"
 anime dl -c 1 -e $((1+$(cat /mnt/media_m/Anime/Airing/Horimiya/episode.txt))):  --download-dir /mnt/media_m/Anime/Airing/Horimiya 'horimiya'
 
 
+#boku_no hero
+anime dl -c 1 -p animesimple -e $((1+$(cat  /mnt/media_m/Anime/Airing/Boku_no_hero_5/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/Boku_no_hero_5 'boku no hero academia 5'
 
-#tensei shitara
-anime dl -e $((1+$(cat /mnt/media_m/Anime/Airing/tensei_shitara_slime_2nd_season/episode.txt))): 'https://animekisa.tv/tensei-shitara-slime-datta-ken-2nd-season' --download-dir /mnt/media_m/Anime/Airing/tensei_shitara_slime_2nd_season
-
-
-#log horizon
-#anime dl -c 4 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/log_horizon/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/log_horizon 'log horizon'
-
-
-#wonder egg priority
-anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/wonder_egg/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/wonder_egg 'wonder egg priority'
-
-
-
-
-
-
+#shaman king
+anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/shaman_king/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/shaman_king 'shaman king 2021'
 
 
 /bin/sh /home/venerable_white/.config/bspwm/bin/anime-episode-notification
