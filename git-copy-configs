@@ -2,6 +2,8 @@
 
 #dotfiles
 
+
+
 for i in alacritty anime-downloader bspwm dunst flameshot gtk-2.0 gtk-3.0 mpv  pcmanfm picom polybar qt5ct qutebrowser rofi sxhkd terminator zathura ranger kitty ncmpcpp newboat nvim sfeed transmission
 do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/dotfiles/"$i"
 done
@@ -19,6 +21,8 @@ cp -r -u -v ~/.sfeed /mnt/work/git/various-files/
 cp -r -u -v ~/Bookmarks /mnt/work/git/various-files/
 
 now=$(date +"%m_%d_%Y")
+
+mkdir /mnt/work/git/various-files/Installed-lists
 
 yay -Qe | awk '{print $1}' > /mnt/work/git/various-files/Installed-lists/installed_crr_$now.txt
 

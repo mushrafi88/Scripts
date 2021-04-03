@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+git-folder-clean
+
+git-copy-configs
+
+cd /mnt/work/git
+
+for d in ./*/ 
+do
+	(cd "$d" && git add . && git commit -m "regular_update" && git push -u origin)
+done
