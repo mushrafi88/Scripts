@@ -9,7 +9,9 @@ do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/dotfiles/"$i"
 done
  cp -r -u -v ~/.config/mimeapps.list /mnt/work/git/dotfiles/
  cp -r -u -v ~/.config/okularrc /mnt/work/git/dotfiles/
+ cp -r -u -v ~/.config/okularrc /mnt/work/git/marble/
  cp -r -u -v ~/.config/okularpartrc /mnt/work/git/dotfiles/
+ cp -r -u -v ~/.config/okularpartrc /mnt/work/git/marble/
  cp -r -u -v ~/.Xresources /mnt/work/git/dotfiles/
  cp -r -u -v ~/.Xresources /mnt/work/git/marble/
 

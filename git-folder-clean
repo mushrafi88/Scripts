@@ -2,10 +2,14 @@
 
 shopt -s extglob 
 
-cd /mnt/work/git/bin && rm -rf -- !(.git)
-cd /mnt/work/git/dotfiles && rm -rf -- !(.git)
-cd /mnt/work/git/marble && rm -rf -- !(.git)
-cd /mnt/work/git/various-files && rm -rf -- !(.git)
+
+cd /mnt/work/git
+
+for d in ./*/ 
+do
+	(cd "$d" && rm -rf -- !(.git|README.md|Screenshots))
+done
+
 
 
 
