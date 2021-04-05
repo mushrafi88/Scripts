@@ -1,9 +1,6 @@
 #!/bin/bash
 bspc desktop -f '^7'
 
-kitty -e ncmpcpp & 
-sleep 300 &
-kitty -e ncmpcpp -s clock &
-sleep 300 &
-kitty -e ncmpcpp -s visualizer &
+kitty -e tmux new-session -s $$ "tmux source-file ~/.config/bspwm/bin/ncmpcpp-tsession" 
+_trap_exit() { tmux kill-session -t $$; }
 

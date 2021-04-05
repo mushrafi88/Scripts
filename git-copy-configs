@@ -15,6 +15,11 @@ done
  cp -r -u -v ~/.Xresources /mnt/work/git/dotfiles/
  cp -r -u -v ~/.Xresources /mnt/work/git/marble/
 
+cp -r -u -v /home/venerable_white/startpage-browser /mnt/work/git/marble/
+cp -r -u -v /home/venerable_white/startpage-browser /mnt/work/git/dotfiles/
+cp -r -u -v /home/venerable_white/startpage-browser /mnt/work/git/various-files/
+
+
 
  cp -r -u -v ~/.config/bspwm/bin/* /mnt/work/git/bin/
  cp -r -u -v ~/.config/bspwm/bin/* /mnt/work/git/dotfiles/bin/
