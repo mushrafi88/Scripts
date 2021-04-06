@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ while true;do time=$(date +%H%M);if [ $time -gt 2130 ];then anime-downloader-showcase;sleep 2h;fi;done
