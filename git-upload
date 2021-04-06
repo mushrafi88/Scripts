@@ -6,7 +6,7 @@ git-copy-configs
 
 cd /mnt/work/git
 
-time=$(date +%a:%H:%m)
+time=$(date +%a:%d:%h:%H:%m)
 
 for d in ./*/ 
 do
