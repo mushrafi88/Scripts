@@ -6,7 +6,9 @@ git-copy-configs
 
 cd /mnt/work/git
 
+time=$(date +%a:%H:%m)
+
 for d in ./*/ 
 do
-	(cd "$d" && git add . && git commit -m "regular_update" && git push -u origin)
+	(cd "$d" && git add . && git commit -m "update-$time" && git push -u origin)
 done
