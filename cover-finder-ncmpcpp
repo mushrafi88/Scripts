@@ -15,4 +15,5 @@ fi
 
 
 ffmpeg -loglevel 0 -y -i /mnt/media_m/Music/album_art/"$art" -vf "scale=$COVER_SIZE:-1" "$COVER"
+#notify-send -t 9000 --icon=$COVER "playing" "$album"
 

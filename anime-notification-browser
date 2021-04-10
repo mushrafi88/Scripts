@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ while true;do python startpage-browser/anime_update.py > startpage-browser/anime.txt;sleep 30m;done

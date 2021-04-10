@@ -25,15 +25,18 @@ export PATH="${PATH}:$HOME/.local/bin"
 #hero successor
 youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/hero_successor/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist\?list\=PLwLSw1_eDZl0KbQlqHjTn5dWFSadUHkzh
 
-#combatants_dispatched
-youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/combatants_dispatched/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl0tNsenacq3tN4Jedyd-H_7
-
 
 #boku_no hero 5
 anime dl -c 1 -p animesimple -e $((1+$(cat  /mnt/media_m/Anime/Airing/Boku_no_hero_5/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/Boku_no_hero_5 'boku no hero academia 5'
 
 #shaman king
 anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/shaman_king/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/shaman_king 'shaman king 2021'
+
+#koikimo
+anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/koikimo/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/koikimo 'Koi to Yobu ni wa Kimochi Warui'
+
+#higehiro
+anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/higehiro/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/higehiro 'Hige wo Soru. Soshite Joshikousei wo Hirou.'
 
 
 /bin/sh /home/venerable_white/.config/bspwm/bin/anime-episode-notification

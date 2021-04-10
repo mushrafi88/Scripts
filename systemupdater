@@ -20,12 +20,15 @@ pip install -U git+https://github.com/vn-ki/anime-downloader.git
 
 pip install manga-py -U
 
-a=$(youtube-dl --version)
-b=$(echo $(pip list |grep "youtube-dl" | awk '{print $2}'))
+#a=$(youtube-dl --version)
+#echo "${a//.}" 
+#b=$(echo $(pip list |grep "youtube-dl" | awk '{print $2}'))
 
-if [[ $a != $b ]]; then
-	pip install youtube-dl -U 
-fi
+#if [[ $a != $b ]]; then
+#	pip install youtube-dl -U 
+#fi
 
 systemcleaner
+
+yay -Ps
 

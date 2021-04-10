@@ -48,4 +48,4 @@ done
 cd ~
 mpc clear
 mpc update
-mpc add Music/Selection
+mpc add /
