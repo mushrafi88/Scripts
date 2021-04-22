@@ -47,6 +47,8 @@ anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/fumetsu/epis
 #vivy's song
 anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/vivy/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/vivy 'vivy'
 
+#romcom where the childhood girl wont lose
+youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/mnt/media_m/Anime/Airing/osamake/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl1WTubEn3m0nfJ8ZLnLFUwq
 
 
 /bin/sh /home/venerable_white/.config/bspwm/bin/anime-episode-notification
