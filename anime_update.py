@@ -56,7 +56,14 @@ def mahayana(l):
     airing_t,episode,epoch = airing_time(id_for_airing)
     if epoch - time.time() < 2*24*3600:
         print(f'{name} Episode {episode} airing at {airing_t}')
+
+#117193 boku no hero 5
+#114535 fumetsu no anata
+#114232 higehiro
+#128546 vivy fluorite
+#114840 koikimo
+
         
-list = [117193,114535,114232,119675,128546,114840,126791]
+list = [117193,114535,114232,128546,114840]
 for l in list:
     mahayana(l)        
