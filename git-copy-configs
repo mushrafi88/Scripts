@@ -44,6 +44,7 @@ done
 
 
 rm -rf /mnt/work/git/dotfiles/mpv/watch_later
+rm -rf /mnt/work/git/dotfiles/mpv/mpvhistory.log
 
 rm -rf /mnt/work/git/dotfiles/qutebrowser/backup
 rm -rf /mnt/work/git/marble/bspwm/bin
