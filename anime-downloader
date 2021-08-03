@@ -29,17 +29,23 @@ export PATH="${PATH}:$HOME/.local/bin"
 #boku_no hero 5
 anime dl -c 1 -p animesimple -e $((1+$(cat  /mnt/media_m/Anime/Airing/Boku_no_hero_5/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/Boku_no_hero_5 'boku no hero academia 5'
 
-#koikimo
-anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/koikimo/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/koikimo 'Koi to Yobu ni wa Kimochi Warui'
-
-#higehiro
-anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/higehiro/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/higehiro 'Hige wo Soru. Soshite Joshikousei wo Hirou.'
-
 #fumetsu no anata
 anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/fumetsu/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/fumetsu 'fumetsu no'
 
-#vivy's song
-anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/vivy/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/vivy 'vivy'
+#tokyo revengers
+youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/tokyo_revengers/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl3F9AGKbC7iRIGeU2XosgTy
+
+#moon_light_journey
+anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/moon_light_journey/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/moon_light_journey 'tsuki ga michibiku'
+
+# slime s2 part 2
+youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/slime_s2_part_2/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl24o1N6adcgGPyIJPfJ21GL
+
+#remake_our_life
+youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/remake/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLxSscENEp7Jjad7wjjOwOoFgbHC5ZXhtG
+
+#seirei gensouki
+anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/seirei_gensouki/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/seirei_gensouki 'seirei gensouki'
 
 
 /bin/sh /home/venerable_white/.config/bspwm/bin/anime-episode-notification
