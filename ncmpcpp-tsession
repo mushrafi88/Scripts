@@ -6,7 +6,7 @@ send-keys "stty -echo" C-m
 send-keys "tput civis -- invisible" C-m
 send-keys "export PS1=''" C-m
 send-keys "clear" C-m
-send-keys "~/.config/bspwm/bin/cover-changer-ncmpcpp " C-m
+send-keys "~/.config/bin/cover-changer-ncmpcpp " C-m
 
 #catalog pane; run instance of ncmpcpp
 split-window -v

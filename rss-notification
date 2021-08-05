@@ -1,10 +1,10 @@
 #!/bin/bash
 
-rss-sorted | head -n 30 > /home/venerable_white/.sfeed/notification/new_feed.txt
+rss-sorted | head -n 30 > $HOME/.sfeed/notification/new_feed.txt
 
-diff /home/venerable_white/.sfeed/notification/old_feed.txt /home/venerable_white/.sfeed/notification/new_feed.txt |grep ">"|cut -c 3- > /home/venerable_white/.sfeed/notification/update.txt 
+diff $HOME/.sfeed/notification/old_feed.txt $HOME/.sfeed/notification/new_feed.txt |grep ">"|cut -c 3- > $HOME/.sfeed/notification/update.txt 
 
-noti=$(cat /home/venerable_white/.sfeed/notification/update.txt | awk '{$1=$2=$3=$4=$5=$(NF)=""; print $0}')
+noti=$(cat $HOME/.sfeed/notification/update.txt | awk '{$1=$2=$3=$4=$5=$(NF)=""; print $0}')
 
 noti=${noti//Upwork/}
 
@@ -16,10 +16,10 @@ noti=${noti//Jobs/}
 
 #notify-send -t 20000 --icon=video-television "$noti" 
 
-echo $noti > /home/venerable_white/.sfeed/notification/update.txt
+echo $noti > $HOME/.sfeed/notification/update.txt
 
 
-my_string=$(cat /home/venerable_white/.sfeed/notification/update.txt)
+my_string=$(cat $HOME/.sfeed/notification/update.txt)
 
 IFS='-' read -ra my_array <<< "$my_string"
 
@@ -30,4 +30,4 @@ do
 done
 
 
-cat /home/venerable_white/.sfeed/notification/new_feed.txt > /home/venerable_white/.sfeed/notification/old_feed.txt
+cat $HOME/.sfeed/notification/new_feed.txt > $HOME/.sfeed/notification/old_feed.txt

@@ -1,0 +1,8 @@
+#!/bin/bash
+bspc desktop -f '^7'
+
+sed -i 's/;//g' ~/.config/polybar/material/include-modules.ini 
+
+bspbar &
+spotify 
+

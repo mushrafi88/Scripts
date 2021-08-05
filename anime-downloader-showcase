@@ -10,7 +10,7 @@ eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME bspwm
 notify-send -t 15000 --icon=video-television "downloading anime"  
 
 
-/usr/bin/kitty -e /home/venerable_white/.config/bspwm/bin/anime-downloader
+/usr/bin/kitty -e /home/venerable_white/.config/bin/anime-downloader
 
 notify-send -t 9000 --icon=video-television "finished downloading anime" 
 sleep 4s 

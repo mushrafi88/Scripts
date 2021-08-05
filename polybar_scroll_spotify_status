@@ -3,9 +3,9 @@
 # see man zscroll for documentation of the following parameters
 zscroll -l 30 \
         --delay 0.1 \
-        --match-command "$HOME/.config/bspwm/bin/polybar_get_spotify_status --status" \
+        --match-command "$HOME/.config/bin/polybar_get_spotify_status --status" \
         --match-text "Playing" "--scroll 1" \
         --match-text "Paused" "--scroll 0" \
-        --update-check true "$HOME/.config/bspwm/bin/polybar_get_spotify_status" &
+        --update-check true "$HOME/.config/bin/polybar_get_spotify_status" &
 
 wait

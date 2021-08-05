@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-DIR="$HOME/.config/bspwm"
+DIR="$HOME/.config/bin"
 
 # Apps
 files="Pcmanfm"
@@ -16,22 +16,22 @@ options="$files\n$editor\n$disk\n$timeshift\n$gparted\n$ranger_"
 chosen="$(echo -e "$options" | rofi -dmenu -p "Run as root(#)")"
 case $chosen in
     $files)
-        apps_as_root 'pcmanfm'
+        sh $HOME/.config/bin/apps_as_root 'pcmanfm'
         ;;
     $editor)
-        apps_as_root 'subl3'
+        sh $HOME/.config/bin/apps_as_root 'subl3'
         ;;
     $disk)
-        apps_as_root 'gnome-disks'
+        sh $HOME/.config/bin/apps_as_root 'gnome-disks'
         ;;
     $timeshift)
-        apps_as_root 'timeshift-gtk'
+        sh $HOME/.config/bin/apps_as_root 'timeshift-gtk'
         ;; 
     $gparted)
-        apps_as_root 'gpartedbin'
+        sh $HOME/.config/bin/apps_as_root 'gpartedbin'
         ;;    
     $ranger_)
-        apps_as_root 'ranger-file-manager'
+        sh $HOME/.config/bin/apps_as_root 'ranger-file-manager'
         ;;
 esac
 #[[ -z $chosen ]] && exit

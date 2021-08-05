@@ -14,12 +14,12 @@ killswitch "rofi -dmenu"
 a=$(rofi -dmenu -p "Search youtube")
 [[ -z $a ]] && exit
 
-b=$(python ~/.config/bspwm/bin/youtube_name_search.py "$a" | rofi -dmenu -p "$a")
+b=$(python ~/.config/bin/youtube_name_search.py "$a" | rofi -dmenu -p "$a")
 [[ -z $b ]] && exit
 
 killswitch "youtube_name_search.py"
 
-c=$(python ~/.config/bspwm/bin/youtube_url_search.py "$a" "$b")
+c=$(python ~/.config/bin/youtube_url_search.py "$a" "$b")
 
 notify-send -t 3000 --icon=video-television "playing video" "$b \n $c" 
 

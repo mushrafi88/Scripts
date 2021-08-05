@@ -1,6 +1,6 @@
 #!/bin/bash
 bspc desktop -f '^7'
 
-kitty -e tmux new-session -s $$ "tmux source-file ~/.config/bspwm/bin/ncmpcpp-tsession" 
+kitty -e tmux new-session -s $$ "tmux source-file ~/.config/bin/ncmpcpp-tsession" 
 _trap_exit() { tmux kill-session -t $$; }
 

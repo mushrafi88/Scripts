@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sed -i '19 s/^/;/' .config/polybar/material/include-modules.ini
+
+bspbar &
+
+killall -9 spotify 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 pactl set-sink-volume @DEFAULT_SINK@ -5%
-vol=$(~/.config/bspwm/bin/volume)
+vol=$(~/.config/bin/volume)
 dunstify "Volume Down : $vol"
 vol_int=$(echo "${vol::-1}")
 if [ $vol_int -gt 45 ]; then
