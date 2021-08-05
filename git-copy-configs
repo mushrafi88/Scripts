@@ -49,4 +49,5 @@ rm -rf /mnt/work/git/dotfiles/qutebrowser/backup
 rm -rf /mnt/work/git/dotfiles/transmission/torrents
 rm -rf /mnt/work/git/dotfiles/transmission/blocklists
 rm -rf /mnt/work/git/dotfiles/transmission/resume
+#mpd and others try something else
 
