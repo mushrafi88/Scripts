@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+while true ;do sh ~/.config/bin/dl-organizer-extension;sleep 3h;done
+

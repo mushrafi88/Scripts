@@ -1,0 +1,3 @@
+#!/bin/bash
+
+while true;do sh ~/.config/bin/wallpaper-changer $(cat /home/venerable_white/Pictures/wallpapers/wallpaper-folder-name.txt) ;sleep 600;done
