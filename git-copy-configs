@@ -24,7 +24,8 @@ cp -r -u -v /home/venerable_white/startpage-browser /mnt/work/git/various-files/
 
 cp -r -u -v ~/.sfeed /mnt/work/git/various-files/
 cp -r -u -v ~/Bookmarks /mnt/work/git/various-files/
-\cp -r -u -v ~/My_sugar_level/sugar_chart.csv /mnt/work/git/various-files/
+\cp -r -u -v ~/sugar_level_tracker_cli/sugar_chart.csv /mnt/work/git/various-files/
+\cp -r -u -v ~/sugar_level_tracker_cli/sugar_chart.pdf /mnt/work/git/various-files/
 
 now=$(date +"%m_%d_%Y")
 

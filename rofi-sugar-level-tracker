@@ -1,0 +1,26 @@
+#!/bin/bash
+
+
+a=$(rofi -dmenu -p "enter sugar-level")
+[[ -z $a ]] && exit
+
+
+cd ~/sugar_level_tracker_cli
+
+#write to csv
+python sugar-level.py $a
+#write to pdf
+
+python latex.py
+
+pdflatex sugar_chart.tex
+
+
+#1. read from last line and dunstify
+#2. do a backup
+
+\cp $HOME/sugar_level_tracker_cli/sugar_chart.csv /mnt/work/My_sugar_level/
+\cp $HOME/sugar_level_tracker_cli/sugar_chart.pdf /mnt/work/My_sugar_level/
+
+notify-send -t 9000 --icon=video-television "sugar_chart updated" 
+
