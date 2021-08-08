@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+FILE=~/Diabetes/sugar_chart.csv
+if test -f "$FILE"
+then
+  python ~/Diabetes/test.py $1
+elif
+ mkdir -p ~/Diabetes
+fi

@@ -3,7 +3,6 @@
 #dotfiles
 
 
-
 for i in alacritty anime-downloader bin bspwm dunst flameshot gtk-2.0 gtk-3.0 mpv  pcmanfm picom neofetch polybar qt5ct qutebrowser rofi sxhkd terminator zathura ranger kitty ncmpcpp newboat  sfeed transmission mpd 
 do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/dotfiles/"$i"
 done
@@ -25,6 +24,7 @@ cp -r -u -v /home/venerable_white/startpage-browser /mnt/work/git/various-files/
 
 cp -r -u -v ~/.sfeed /mnt/work/git/various-files/
 cp -r -u -v ~/Bookmarks /mnt/work/git/various-files/
+\cp -r -u -v ~/My_sugar_level/sugar_chart.csv /mnt/work/git/various-files/
 
 now=$(date +"%m_%d_%Y")
 
