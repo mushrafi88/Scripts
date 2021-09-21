@@ -27,22 +27,25 @@ export PATH="${PATH}:$HOME/.local/bin"
 
 
 #boku_no hero 5
-anime dl -c 1 -p animesimple -e $((1+$(cat  /mnt/media_m/Anime/Airing/Boku_no_hero_5/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/Boku_no_hero_5 'boku no hero academia 5'
-
-#fumetsu no anata
-anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/fumetsu/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/fumetsu 'fumetsu no'
+anime dl -c 1 -p genoanime -e $((1+$(cat  /mnt/media_m/Anime/Airing/Boku_no_hero_5/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/Boku_no_hero_5 'boku no hero academia 5th season'
 
 #tokyo revengers
 youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/tokyo_revengers/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl3F9AGKbC7iRIGeU2XosgTy
 
 #moon_light_journey
-anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/moon_light_journey/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/moon_light_journey 'tsuki ga michibiku'
+anime dl -c 1 -p genoanime -e $((1+$(cat  /mnt/media_m/Anime/Airing/moon_light_journey/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/moon_light_journey 'tsuki ga michibiku'
 
 # slime s2 part 2
 youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/slime_s2_part_2/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl24o1N6adcgGPyIJPfJ21GL
 
 #remake_our_life
 youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/remake/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLxSscENEp7Jjad7wjjOwOoFgbHC5ZXhtG
+
+#sonny boy
+youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/sonny_boy/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLxSscENEp7Jh5cTYOJ44AOGwWLAap7dCU
+
+#dead_detective
+youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/dead_detective/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl2qyiTb5d4rLdPpMLM8gEGP
 
 #seirei gensouki
 anime dl -c 1 -p vidstream -e $((1+$(cat  /mnt/media_m/Anime/Airing/seirei_gensouki/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/seirei_gensouki 'seirei gensouki'
