@@ -19,7 +19,6 @@ cp -r -u -v /home/venerable_white/startpage-browser /mnt/work/git/dotfiles/
 cp -r -u -v /home/venerable_white/startpage-browser /mnt/work/git/various-files/
 
 
-
  cp -r -u -v ~/.config/bin/* /mnt/work/git/bin/
 
 cp -r -u -v ~/.sfeed /mnt/work/git/various-files/
@@ -42,7 +41,11 @@ for i in bin bspwm dunst gtk-2.0 gtk-3.0 kitty mpd ncmpcpp nvim pcmanfm picom po
 do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/marble/"$i"
 done
 
+cp -r -u -v ~/.oh-my-zsh /mnt/work/git/marble/
+cp -r -u -v ~/.zshrc /mnt/work/git/marble/
+cr -r -u -v ~/.zsh /mnt/work/git/marble/
 
+rm -rf /mnt/work/git/marble/.zsh/history
 rm -rf /mnt/work/git/dotfiles/mpv/watch_later
 rm -rf /mnt/work/git/dotfiles/mpv/mpvhistory.log
 
@@ -50,5 +53,7 @@ rm -rf /mnt/work/git/dotfiles/qutebrowser/backup
 rm -rf /mnt/work/git/dotfiles/transmission/torrents
 rm -rf /mnt/work/git/dotfiles/transmission/blocklists
 rm -rf /mnt/work/git/dotfiles/transmission/resume
+rm -rf /mnt/work/git/marble/mpd/{mpd.db,mpd.log,mpd.pid,mpdstate}
+rm -rf /mnt/work/git/various-files
 #mpd and others try something else
 
