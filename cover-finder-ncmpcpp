@@ -1,7 +1,7 @@
 #!/bin/bash
 
 COVER="/mnt/media_m/Music/temp/album_cover.jpg"
-COVER_SIZE="620"
+COVER_SIZE="650"
 
 album=$(basename "$(mpc current)")
 art=$(echo $album | sed 's/.m4a/.jpg/g')
@@ -15,5 +15,5 @@ fi
 
 
 ffmpeg -loglevel 0 -y -i /mnt/media_m/Music/album_art/"$art" -vf "scale=$COVER_SIZE:-1" "$COVER"
-#notify-send -t 9000 --icon=$COVER "playing" "$album"
+#notify-send -t 9000 --icon=$COVER "ptmux alternativelaying" "$album"
 

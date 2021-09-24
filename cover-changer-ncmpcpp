@@ -5,7 +5,7 @@ source "`ueberzug library`"
 COVER="/mnt/media_m/Music/temp/album_cover.jpg"
 
 function add_cover {
-  ImageLayer::add [identifier]="img" [x]="2" [y]="1" [path]="$COVER"
+  ImageLayer::add [identifier]="img" [x]="0" [y]="0" [path]="$COVER"
 }
 
 ImageLayer 0< <(

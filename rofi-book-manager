@@ -21,8 +21,9 @@ loop()
 		new_choose=$curr_choose
 		loop
 	else 
-		okular "$new_choose"
+		org.kde.okular "$new_choose"
 	fi
 }
 
 loop
+

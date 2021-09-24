@@ -11,7 +11,7 @@ killswitch "youtube_name_search.py"
 killswitch "youtube_url_search.py"
 killswitch "rofi -dmenu"
 
-a=$(rofi -dmenu -p "Search youtube")
+a=$(rofi -theme dmenu -dmenu -p "youtube search  ")
 [[ -z $a ]] && exit
 
 b=$(python ~/.config/bin/youtube_name_search.py "$a" | rofi -dmenu -p "$a")

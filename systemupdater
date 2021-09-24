@@ -11,7 +11,7 @@ notify-send -t 9000 --icon=video-television "input password git done"
 
 
 #remember its installed like this
-pip install -U git+https://github.com/vn-ki/anime-downloader.git
+#pip install -U git+https://github.com/vn-ki/anime-downloader.git
 
 ###################
 #sudo pip install  jupyterlab-lsp -U  
@@ -24,9 +24,9 @@ pip install manga-py -U
 #echo "${a//.}" 
 #b=$(echo $(pip list |grep "youtube-dl" | awk '{print $2}'))
 
-#if [[ $a != $b ]]; then
-#	pip install youtube-dl -U 
-#fi
+if [[ $a != $b ]]; then
+	pip install youtube-dl -U 
+fi
 
 systemcleaner
 

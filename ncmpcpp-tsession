@@ -17,16 +17,16 @@ send-keys 1
 #visualizer pane; run instance of ncmpcpp in visualizer mode
 select-pane -t 0
 split-window -h
-send-keys "ncmpcpp -s visualizer --config='~/.config/ncmpcpp/config'" C-m
+send-keys "cava" C-m
 send-keys 8
 send-keys u
 
 #resize image and visualizer pane to fit image
-resize-pane -t 0 -x 65 -y 20
-resize-pane -t 1 -y 20
+resize-pane -t 0 -x 65 -y 19
+resize-pane -t 1 -y 19
 
 #hook for keeping the image pane size constant
-set-hook client-resized 'resize-pane -t 0 -x 49 -y 23'
+#set-hook client-resized 'resize-pane -t 0 -x 49 -y 23'
 
 #focus on catalog pane
 select-pane -t 2

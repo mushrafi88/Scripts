@@ -38,7 +38,7 @@ pip freeze > /mnt/work/git/various-files/Installed-lists/python_installed_$now.t
 cp /home/venerable_white/installed_app_list/App_list.ipynb /mnt/work/git/various-files/Installed-lists/
 
 
-for i in alacritty  bspwm  gtk-2.0  gtk-3.0  picom  polybar  rofi  sxhkd kitty dunst ranger qt5ct ncmpcpp mpd 
+for i in bin bspwm dunst gtk-2.0 gtk-3.0 kitty mpd ncmpcpp nvim pcmanfm picom polybar qt5ct qutebrowser ranger rofi startpage-browser sxhkd zathura 
 do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/marble/"$i"
 done
 

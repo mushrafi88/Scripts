@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #mkdir -p /mnt/media_m/Music/{liked\ videos\ from\ youtube/might_need_trimming,Anime\ op\ \&\ ed/might\ need\ trimming} 
-mkdir -p /mnt/media_m/Music/Selection/{liked\ videos\ from\ youtube/might_need_trimming,Anime\ op\ \&\ ed/might\ need\ trimming} 
+mkdir -p /mnt/media_m/Music/Selection/{youtube/trimming,Anime/trimming} 
 
 
-cd /mnt/media_m/Music/Selection/liked\ videos\ from\ youtube/might_need_trimming 
+cd /mnt/media_m/Music/Selection/youtube/trimming 
 youtube-dl -ci  -f 'bestaudio[ext=m4a]' --playlist-end 30 --embed-thumbnail --download-archive dl.txt  -o "%(title)s.%(ext)s" --cookies cookies.txt https://www.youtube.com/playlist\?list\=LL8597xVphIOE5AaLJLlJvFg
 source thumbnail-adder
 
@@ -26,7 +26,7 @@ done
 #for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Play/ ;done
 
 
-cd /mnt/media_m/Music/Selection/Anime\ op\ \&\ ed/might\ need\ trimming
+cd /mnt/media_m/Music/Selection/Anime/trimming
 youtube-dl -ci  -f 'bestaudio[ext=m4a]' --playlist-end 20 --embed-thumbnail --download-archive dl.txt  -o "%(title)s.%(ext)s" https://www.youtube.com/playlist?list=PLuLW3E9NVjakix7eyfBRb-tTUy3kIjOsH 
 source thumbnail-adder
 

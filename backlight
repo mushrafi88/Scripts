@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BNESS="$(xbacklight -get)"
+BNESS="$(light -G)"
 LIGHT=${BNESS%.*}
 
 echo "$LIGHT"

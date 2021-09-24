@@ -5,4 +5,4 @@ rofi -dmenu\
     -i\
     -no-fixed-num-lines\
     -p "Sudo Password: "\
-    -theme ~/.config/rofi/adi1090-themes/themes/askpass.rasi
+    -theme $HOME/.config/rofi/powermenu/message.rasi

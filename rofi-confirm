@@ -3,4 +3,4 @@ rofi -dmenu\
     -i\
     -no-fixed-num-lines\
     -p "Are You Sure? : "\
-    -theme ~/.config/rofi/adi1090-themes/themes/confirm.rasi
+    -theme $HOME/.config/rofi/powermenu/confirm.rasi
