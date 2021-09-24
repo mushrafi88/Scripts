@@ -47,7 +47,9 @@ cp -r -u -v /etc/default/grub /mnt/work/git/various-files/
 cp -r -u -v /etc/X11/xorg.conf.d /mnt/work/git/various-files/
 cp -r -u -v /etc/{pacman.conf,makepkg.conf} /mnt/work/git/various-files/
 cp -r -u -v ~/.mozilla/firefox/sfnojran.default-beta/chrome /mnt/work/git/various-files/firefox-css/
+cp -r -u -v /mnt/work/git/{after_base_1.txt,base-uefi.sh,curr_23_sep.txt,fresh_packages_from_ef.txt} /mnt/work/git/various-files
 
+git-commands}
 
 rm -rf /mnt/work/git/marble/.zsh/history
 rm -rf /mnt/work/git/dotfiles/mpv/watch_later
