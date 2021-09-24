@@ -1,25 +1,30 @@
 #!/bin/bash 
 
 #dotfiles
-
-
-for i in alacritty anime-downloader bin bspwm dunst flameshot gtk-2.0 gtk-3.0 mpv  pcmanfm picom neofetch polybar qt5ct qutebrowser rofi sxhkd terminator zathura ranger kitty ncmpcpp newboat  sfeed transmission mpd 
+for i in anime-downloader bin bspwm cava dunst flameshot gtk-2.0 gtk-3.0 kitty mpd mpv ncmpcpp nvim pcmanfm picom polybar qt5ct qutebrowser ranger rofi sfeed startpage-browser sxhkd transmission zathura mimeapps.list okularrc okularpartrc QtProject.conf 
 do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/dotfiles/"$i"
 done
- cp -p ~/.config/nvim/init.vim /mnt/work/git/dotfiles/nvim/
- cp -p ~/.config/nvim/init.vim /mnt/work/git/marble/nvim/
- cp -r -u -v ~/.config/mimeapps.list /mnt/work/git/dotfiles/
- cp -r -u -v ~/.config/okularrc /mnt/work/git/dotfiles/
- cp -r -u -v ~/.config/okularpartrc /mnt/work/git/dotfiles/
- cp -r -u -v ~/.Xresources /mnt/work/git/dotfiles/
- cp -r -u -v ~/.Xresources /mnt/work/git/marble/
+rm -rf /mnt/work/git/dotfiles/anime-downloader/watch.json
+rm -rf /mnt/work/git/dotfiles/mpd/{mpd.db,mpd.log,mpd.pid,mpdstate}
+rm -rf /mnt/work/git/dotfiles/mpv/{glsl,watch_later,mpvhistory.log}
 
-cp -r -u -v /home/venerable_white/startpage-browser /mnt/work/git/marble/
-cp -r -u -v /home/venerable_white/startpage-browser /mnt/work/git/dotfiles/
+cp -r -u -v ~/.Xresources /mnt/work/git/dotfiles/home
+cp -r -u -v ~/.oh-my-zsh /mnt/work/git/dotfiles/home/
+cp -r -u -v ~/.zshrc /mnt/work/git/dotfiles/home/
+cp -r -u -v ~/.zsh /mnt/work/git/dotfiles/home/
 
+rm -rf /mnt/work/git/dotfiles/.zsh/history
 
- cp -r -u -v ~/.config/bin/* /mnt/work/git/bin/
+rm -rf /mnt/work/git/dotfiles/qutebrowser/backup
+rm -rf /mnt/work/git/dotfiles/transmission/torrents
+rm -rf /mnt/work/git/dotfiles/transmission/blocklists
+rm -rf /mnt/work/git/dotfiles/transmission/resume
+#
 
+#bin 
+cp -r -u -v ~/.config/bin/* /mnt/work/git/bin/
+
+# various-files
 \cp -r -u -v ~/sugar_level_tracker_cli/sugar_chart.csv /mnt/work/git/various-files/
 \cp -r -u -v ~/sugar_level_tracker_cli/sugar_chart.pdf /mnt/work/git/various-files/
 
@@ -33,15 +38,6 @@ pip freeze > /mnt/work/git/various-files/Installed-lists/python_installed_$now.t
 
 cp /home/venerable_white/installed_app_list/App_list.ipynb /mnt/work/git/various-files/Installed-lists/
 
-
-for i in bin bspwm dunst gtk-2.0 gtk-3.0 kitty mpd ncmpcpp nvim pcmanfm picom polybar qt5ct qutebrowser ranger rofi startpage-browser sxhkd zathura 
-do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/marble/"$i"
-done
-
-cp -r -u -v ~/.oh-my-zsh /mnt/work/git/marble/
-cp -r -u -v ~/.zshrc /mnt/work/git/marble/
-cp -r -u -v ~/.zsh /mnt/work/git/marble/
-
 cp -r -u -v ~/{.sfeed,.zsh,.oh-my-zsh,Bookmarks,startpage-browser,.bash_history,.bash_logout,.bashrc,.zshrc} /mnt/work/git/various-files/
 cp -r -u -v /etc/default/grub /mnt/work/git/various-files/
 cp -r -u -v /etc/X11/xorg.conf.d /mnt/work/git/various-files/
@@ -51,15 +47,5 @@ cp -r -u -v /mnt/work/git/{after_base_1.txt,base-uefi.sh,curr_23_sep.txt,fresh_p
 
 git-commands}
 
-rm -rf /mnt/work/git/marble/.zsh/history
-rm -rf /mnt/work/git/dotfiles/mpv/watch_later
-rm -rf /mnt/work/git/dotfiles/mpv/mpvhistory.log
 
-rm -rf /mnt/work/git/dotfiles/qutebrowser/backup
-rm -rf /mnt/work/git/dotfiles/transmission/torrents
-rm -rf /mnt/work/git/dotfiles/transmission/blocklists
-rm -rf /mnt/work/git/dotfiles/transmission/resume
-rm -rf /mnt/work/git/marble/mpd/{mpd.db,mpd.log,mpd.pid,mpdstate}
-#rm -rf /mnt/work/git/various-files
-#mpd and others try something else
 
