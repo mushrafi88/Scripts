@@ -7,7 +7,7 @@ cd /mnt/work/git
 
 for d in ./*/ 
 do
-	(cd "$d" && rm -rf -- !(.git|README.md|Screenshots))
+	(cd "$d" && rm -rf -- !(.git|README.md|Screenshots|Marble))
 done
 
 

@@ -1,25 +1,27 @@
 #!/bin/bash 
 
 #dotfiles
-for i in anime-downloader bin bspwm cava dunst flameshot gtk-2.0 gtk-3.0 kitty mpd mpv ncmpcpp nvim pcmanfm picom polybar qt5ct qutebrowser ranger rofi sfeed startpage-browser sxhkd transmission zathura mimeapps.list okularrc okularpartrc QtProject.conf 
+for i in anime-downloader bspwm cava dunst flameshot gtk-2.0 gtk-3.0 kitty mpd mpv ncmpcpp nvim pcmanfm picom polybar qt5ct qutebrowser ranger rofi sfeed startpage-browser sxhkd transmission zathura  
 do  cp -r -u -v ~/.config/"$i"/. /mnt/work/git/dotfiles/"$i"
 done
+
+for i in mimeapps.list okularrc okularpartrc QtProject.conf
+do cp ~/.config/"$i" /mnt/work/git/dotfiles/"$i"
+done
+
 rm -rf /mnt/work/git/dotfiles/anime-downloader/watch.json
 rm -rf /mnt/work/git/dotfiles/mpd/{mpd.db,mpd.log,mpd.pid,mpdstate}
-rm -rf /mnt/work/git/dotfiles/mpv/{glsl,watch_later,mpvhistory.log}
+rm -rf /mnt/work/git/dotfiles/mpv/{watch_later,mpvhistory.log}
 
-cp -r -u -v ~/.Xresources /mnt/work/git/dotfiles/home
-cp -r -u -v ~/.oh-my-zsh /mnt/work/git/dotfiles/home/
-cp -r -u -v ~/.zshrc /mnt/work/git/dotfiles/home/
-cp -r -u -v ~/.zsh /mnt/work/git/dotfiles/home/
+cp -r -u -v ~/.Xresources /mnt/work/git/dotfiles/
+#cp -r -u -v ~/.oh-my-zsh /mnt/work/git/dotfiles/zsh-config/
+cp -r -u -v ~/.zshrc /mnt/work/git/dotfiles/
+cp -r -u -v ~/.zsh /mnt/work/git/dotfiles/
 
 rm -rf /mnt/work/git/dotfiles/.zsh/history
 
 rm -rf /mnt/work/git/dotfiles/qutebrowser/backup
-rm -rf /mnt/work/git/dotfiles/transmission/torrents
-rm -rf /mnt/work/git/dotfiles/transmission/blocklists
-rm -rf /mnt/work/git/dotfiles/transmission/resume
-#
+rm -rf /mnt/work/git/dotfiles/transmission/{torrents,blocklists,resume}
 
 #bin 
 cp -r -u -v ~/.config/bin/* /mnt/work/git/bin/
@@ -30,7 +32,7 @@ cp -r -u -v ~/.config/bin/* /mnt/work/git/bin/
 
 now=$(date +"%m_%d_%Y")
 
-mkdir /mnt/work/git/various-files/Installed-lists
+mkdir -p /mnt/work/git/various-files/{Installed-lists,firefox-css}
 
 yay -Qe | awk '{print $1}' > /mnt/work/git/various-files/Installed-lists/installed_crr_$now.txt
 
@@ -38,14 +40,14 @@ pip freeze > /mnt/work/git/various-files/Installed-lists/python_installed_$now.t
 
 cp /home/venerable_white/installed_app_list/App_list.ipynb /mnt/work/git/various-files/Installed-lists/
 
-cp -r -u -v ~/{.sfeed,.zsh,.oh-my-zsh,Bookmarks,startpage-browser,.bash_history,.bash_logout,.bashrc,.zshrc} /mnt/work/git/various-files/
-cp -r -u -v /etc/default/grub /mnt/work/git/various-files/
-cp -r -u -v /etc/X11/xorg.conf.d /mnt/work/git/various-files/
-cp -r -u -v /etc/{pacman.conf,makepkg.conf} /mnt/work/git/various-files/
+cp -r -u -v ~/{.sfeed,.zsh,.oh-my-zsh,Bookmarks,.bash_history,.bash_logout,.bashrc,.zshrc} /mnt/work/git/various-files/
+mkdir -p /mnt/work/git/various-files/etc/{default,X11/xorg.conf.d}
+cp -r -u -v /etc/default/grub /mnt/work/git/various-files/etc/default/grub
+cp -r -u -v /etc/X11/xorg.conf.d /mnt/work/git/various-files/etc/X11/
+cp -r -u -v /etc/{pacman.conf,makepkg.conf} /mnt/work/git/various-files/etc/
 cp -r -u -v ~/.mozilla/firefox/sfnojran.default-beta/chrome /mnt/work/git/various-files/firefox-css/
-cp -r -u -v /mnt/work/git/{after_base_1.txt,base-uefi.sh,curr_23_sep.txt,fresh_packages_from_ef.txt} /mnt/work/git/various-files
+cp -r -u -v /mnt/work/git/{after_base_1.txt,base-uefi.sh,curr_23_sep.txt,fresh_packages_from_ef.txt} /mnt/work/git/various-files/Installed-lists
 
-git-commands}
 
 
 

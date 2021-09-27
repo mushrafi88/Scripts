@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sed -i 's/;tray/tray/g' .config/polybar/material/config.ini && bspbar

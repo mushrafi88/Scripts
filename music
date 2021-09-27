@@ -1,6 +1,10 @@
 #!/bin/bash
 bspc desktop -f '^7'
 
+spotify-stop &
 kitty -e tmux new-session -s $$ "tmux source-file ~/.config/bin/ncmpcpp-tsession" 
 _trap_exit() { tmux kill-session -t $$; }
+
+
+
 

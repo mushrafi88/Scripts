@@ -1,0 +1,13 @@
+#!/bin/bash
+
+playerctl --player=spotify status > /dev/null
+if [ $? -eq 0 ]
+then
+    spotify-stop
+else 
+   mpc stop
+fi
+
+
+
+

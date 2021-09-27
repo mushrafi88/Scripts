@@ -1,5 +1,0 @@
-#!/bin/bash 
-
-command=$(rofi -dmenu -p "write command")
-
-kitty -e $command

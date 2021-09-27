@@ -57,13 +57,12 @@ def mahayana(l):
     if epoch - time.time() < 2*24*3600:
         print(f'{name} Episode {episode} airing at {airing_t}')
 
-#117193 boku no hero 5
-#114535 fumetsu no anata
-#114232 higehiro
-#128546 vivy fluorite
-#114840 koikimo
+list = []
 
-        
-list = [117193,114535,114232,128546,114840]
+with open('../startpage-browser/anime-list.txt', 'r') as filehandle:
+    for line in filehandle:
+        cur = line[:-1]
+        list.append(cur)
+
 for l in list:
     mahayana(l)        

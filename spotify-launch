@@ -1,8 +1,22 @@
 #!/bin/bash
 bspc desktop -f '^7'
 
-sed -i 's/;//g' ~/.config/polybar/material/include-modules.ini 
+mpd_stat=$(mpc status | awk '{ print $2 }')  
 
-bspbar &
-spotify 
+if [ "$mpd_stat" == "n/a" ]; then
+  sed -i 's/;//g' ~/.config/polybar/material/include-modules.ini 
+  bspbar &
+  spotify 
+else
+    mpc stop
+    sed -i 's/;//g' ~/.config/polybar/material/include-modules.ini 
+    bspbar &
+    spotify 
+fi
+
+
+
+
+
+
 

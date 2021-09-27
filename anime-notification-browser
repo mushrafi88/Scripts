@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
- while true;do python ~/.config/bin/anime_update.py > startpage-browser/anime.txt;sleep 30m;done
+cd ~/.config/bin
+while true;do python anime_update.py > ~/.config/startpage-browser/anime-upcoming.txt;sleep 30m;done
