@@ -2,7 +2,7 @@ neww
 set -g status off
 
 
-send-keys "sudo ps_mem -w 1" C-m
+send-keys "sudo ps_mem" C-m
 
 split-window -v
 select-pane -t 1
