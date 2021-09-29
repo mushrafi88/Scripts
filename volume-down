@@ -1,9 +1,5 @@
 #!/bin/bash
 
 pactl set-sink-volume @DEFAULT_SINK@ -5%
-vol=$(~/.config/bin/volume)
-dunstify "Volume Down : $vol"
-vol_int=$(echo "${vol::-1}")
-if [ $vol_int -gt 45 ]; then
-	notify-send -t 40000 --icon=video-television "Goshujin sama your ears in danger.Be Aware"
-fi
+sh ~/.config/bin/volume
+

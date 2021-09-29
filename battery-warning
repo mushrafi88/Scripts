@@ -7,6 +7,6 @@ do
     then 
         dunstify -a "Battery" "Battery : $level %" " GOSHUJIN SAMA CONNECT TO AC" -i "~/.config/dunst/icon/angry.png" -u "critical" -t 45000 
     fi
-    sleep 15m
+    sleep 6m
 done
 

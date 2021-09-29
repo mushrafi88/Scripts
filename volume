@@ -1,5 +1,9 @@
 #!/bin/bash
 
 volume=$(amixer -D pulse get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }')
-
-echo "$volume"
+vol=$(echo $volume | sed "s/[^0-9]//g")
+if [ $vol -gt 55 ];then
+    dunstify -a "VOLUME HIGH" "$volume" "GOSHUJIN SAMA TURN DOWN THE VOLUME" -i "~/.config/dunst/icon/angry.png" -u "critical" -t 45000
+else
+    dunstify "VOLUME : $volume" -t 4000
+fi

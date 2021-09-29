@@ -2,12 +2,13 @@ neww
 set -g status off
 
 
-send-keys "ps_mem" C-m
+send-keys "sudo ps_mem -w 1" C-m
 
 split-window -v
 select-pane -t 1
 send-keys "htop" C-m
-send-keys 1
+send-keys 8
+send-keys u
 
 select-pane -t 0
 split-window -h
@@ -15,8 +16,8 @@ send-keys "nvtop" C-m
 send-keys 8
 send-keys u
 
-resize-pane -t 0 -x 65 -y 19
-resize-pane -t 1 -y 19
+resize-pane -t 0 -x 65 -y 25
+resize-pane -t 1 -y 25
 
 select-pane -t 2
 
