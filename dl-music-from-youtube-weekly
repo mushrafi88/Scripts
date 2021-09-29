@@ -1,3 +1,15 @@
 #!/usr/bin/env bash
 
- while true;do time=$(date +%a);if [ "$time" = "Fri" ];then bspc desktop -f '^1';notify-send  -t 15000 --icon=video-television "downloading Songs from youtube" ;kitty -e dl-music-from-youtube; notify-send -t 15000 --icon=video-television "finished downloading songs from youtube" ;sleep 12h;fi;sleep 1h;done
+ while true
+ do 
+     time=$(date +%a)
+     if [ "$time" = "Fri" ]
+     then
+         bspc desktop -f '^1'
+         dunstify "Downloading Songs from Youtube" -i "~/.config/dunst/icon/normal.jpg" 
+         kitty -e dl-music-from-youtube
+         dunstify "Finished downloading songs from youtube" -i "~/.config/dunst/icon/normal.jpg"
+         sleep 12h
+         fi
+     sleep 1h
+done

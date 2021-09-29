@@ -1,3 +1,30 @@
 #!/usr/bin/env bash
 
- while true;do time=$(date +%H%M);if [ $time -gt 2100 ];then anime-downloader-showcase;sleep 1.5h;fi;sleep 30m;done
+function anime_episode_notification(){
+
+for d in /mnt/media_m/Anime/Airing/*/ 
+do
+	(cd "$d" && 
+    a=$(ls | grep -Eo '[0-9]{1,4}.mp4' | sed 's/\..*$//' | cut -d: -f 2 | sort -n | tail -n 1) 
+    if [[ ! -z $a ]]; then
+    	if [[ "$a" -gt $(cat episode.txt) ]]; then
+            f=$(basename $d)
+            dunstify "$f" "New episode $a" -i "~/.config/dunst/icon/love.png" -t 5000  
+    		echo "$a">episode.txt
+    	fi
+    fi)
+done
+}
+
+while true
+do 
+    time=$(date +%H%M)
+    if [ $time -gt 2000 ]
+    then
+        bsp desktop -f '^1'
+        kitty -e anime-downloader
+        anime_episode_notification
+        sleep 1.5h
+    fi
+    sleep 30m
+ done

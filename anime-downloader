@@ -12,28 +12,3 @@ export PATH="${PATH}:$HOME/.local/bin"
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#/bin/sh /home/venerable_white/.config/bin/anime-episode-notification
-
-#/bin/sh /home/venerable_white/.config/bin/anime-episode-count

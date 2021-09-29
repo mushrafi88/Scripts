@@ -1,0 +1,12 @@
+#!/bin/bash
+
+while true
+do
+    level=$(acpi | awk '{print $4}' | sed "s/[^0-9]//g")
+    if [ $level -lt 40 ]
+    then 
+        dunstify -a "Battery" "Battery : $level %" " GOSHUJIN SAMA CONNECT TO AC" -i "~/.config/dunst/icon/angry.png" -u "critical" -t 45000 
+    fi
+    sleep 15m
+done
+

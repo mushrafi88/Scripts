@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sed -i '19 s/^/;/' .config/polybar/material/include-modules.ini
+sed -i '19 s/^/;/' .config/polybar/include-modules.ini
 
 bspbar &
 

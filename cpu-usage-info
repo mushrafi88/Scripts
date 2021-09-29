@@ -2,12 +2,5 @@
 
 bspc desktop -f '^5'
 
-#terminator --new-tab -e gotop &
-kitty -e htop &
-sleep 300 &
-kitty -e nvtop &
-sleep 300 &
-kitty -e sudo bandwhich &
-sleep 300 &
-kitty -e sudo ps_mem -w 1 &
-#working except neofetch
+kitty -e tmux new-session -s $$ "tmux source-file ~/.config/bin/cpu-tsession"
+_trap_exit() { tmux kill-session -t $$; }
