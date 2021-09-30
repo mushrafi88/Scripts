@@ -40,10 +40,11 @@ done <<< "$primary"
 
 if [ -s /tmp/today.txt ]
 then
-     while read line
+     notify=$(cat /tmp/today.txt | sed '/^$/d') 
+     while IFS= read -r line
      do
          dunstify -a "Notes" "$line" -i "~/.config/dunst/icon/work.jpg" -t 45000
-     done < /tmp/today.txt
+     done <<< "$notify"
 else
      dunstify -a "Notes" "No task for today" -i "~/.config/dunst/icon/love.png"
 fi
