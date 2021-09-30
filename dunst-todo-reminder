@@ -1,0 +1,21 @@
+#!/bin/bash
+
+while true
+do
+    sorted=$(cat /tmp/temp_sort.txt | sort -k1)
+    time=$(date +%H%M)
+    while IFS= read -r line
+    do
+        ex_time=$(echo "$line" | awk '{print $1}')
+        difference=$(($time-$ex_time))
+        diff=$(echo "$difference" | sed 's/^-//g')
+        if [ $diff -lt 15 ]
+        then
+            notify=$(echo $line | sed "s/$ex_time //g")
+            dunstify -a "Notes" "$notify" -u "critical" -t 45000
+        fi
+    done <<< "$sorted"
+    sleep 5m
+done
+
+
