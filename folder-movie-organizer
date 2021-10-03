@@ -4,3 +4,11 @@ for s in *.mkv *.mp4 *.avi; do mkdir "${s%.*}";done
 for s in *.mkv *.mp4 *.avi; do mv  "$s" "${s%.*}"/"$s";done
 for s in *.srt;do mv "$s" "${s%.*.*}"/"$s";done
 
+for s in */
+do
+    b=$(echo "$s" | sed 's/www.1TamilMV.guru - //g') &&
+    a=$(guessit "$b" | grep "title" | awk '{for(i=2;i<=NF;i++) printf $i" "; print ""}' | sed 's/,//g' | sed 's/"//g') &&
+    mv "$s"/ "$a"
+done
+
+rm -rf "*"

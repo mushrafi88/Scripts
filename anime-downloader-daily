@@ -5,12 +5,13 @@ function anime_episode_notification(){
 for d in /mnt/media_m/Anime/Airing/*/ 
 do
 	(cd "$d" && 
-    a=$(ls | grep -Eo '[0-9]{1,4}.mp4' | sed 's/\..*$//' | cut -d: -f 2 | sort -n | tail -n 1) 
-    if [[ ! -z $a ]]; then
-    	if [[ "$a" -gt $(cat episode.txt) ]]; then
+    a=$(ls -lt --time=birth | awk '{for(i=9;i<=NF;i++) printf $i" "; print ""}' |  sed 's/episode.txt//g' | sed "/Preview/d" | sed "/PV/d" | sed -r '/^\s*$/d' | head -n 1)
+    e=$(guessit "$a" | grep '"episode":' | awk '{print $NF}' | sed 's/,//g')
+    if [ ! -z "$e" ]; then
+        if [ "$e" -gt $(cat episode.txt) ] || [ ! -f episode.txt ]; then
             f=$(basename $d)
-            dunstify "$f" "New episode $a" -i "~/.config/dunst/icon/love.png" -t 5000  
-    		echo "$a">episode.txt
+            dunstify "$f" "New episode $e" -i "~/.config/dunst/icon/love.png" -t 5000  
+    		echo "$e">episode.txt
     	fi
     fi)
 done
@@ -21,7 +22,7 @@ do
     time=$(date +%H%M)
     if [ $time -gt 2000 ]
     then
-        bsp desktop -f '^1'
+        bspc desktop -f '^1'
         kitty -e anime-downloader
         anime_episode_notification
         sleep 1.5h
