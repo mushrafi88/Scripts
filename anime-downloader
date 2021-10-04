@@ -10,5 +10,7 @@ export PATH="${PATH}:$HOME/.local/bin"
 #anime
 #anime dl -c 1 -p genoanime -e $((1+$(cat  /mnt/media_m/Anime/Airing/Boku_no_hero_5/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/Boku_no_hero_5 'boku no hero academia 5th season'
 
-
-
+#mieriko_chan
+yt-dlp -ci -f 'bv[height=1080]+ba/b' --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/mieriko_chan/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl17reRE_OPjNhFb-IgV1aYY
+#mushoku_tensei_s2
+yt-dlp -ci -f 'bv[height=1080]+ba/b' --playlist-start 23 --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/mushoku_tensei_s2/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl01_ftoIT3birJWkpxFZkEl
