@@ -1,8 +1,7 @@
 #!/bin/bash
 
-
+bspc node -d '^1'
 export PATH="${PATH}:$HOME/.local/bin"
-
 
 #youtube
 #youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/hero_successor/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist\?list\=PLwLSw1_eDZl0KbQlqHjTn5dWFSadUHkzh
@@ -14,3 +13,9 @@ export PATH="${PATH}:$HOME/.local/bin"
 yt-dlp -ci -f 'bv[height=1080]+ba/b' --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/mieriko_chan/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl17reRE_OPjNhFb-IgV1aYY
 #mushoku_tensei_s2
 yt-dlp -ci -f 'bv[height=1080]+ba/b' --playlist-start 23 --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/mushoku_tensei_s2/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl01_ftoIT3birJWkpxFZkEl
+#ojisan_assassin
+yt-dlp -ci -f 'bv[height=1080]+ba/b' --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/ojisan_assassin/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl0PWwz5cS6rncbDhX-J3AeV
+#komi-san
+anime dl -c 1 -p animerush -e  $((1+$(cat  /mnt/media_m/Anime/Airing/komi-san/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/komi-san 'komi-san'
+#shin-no-nakama
+anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/shin_no_nakama/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/shin_no_nakama 'shin no nakama'

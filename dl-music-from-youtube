@@ -1,8 +1,9 @@
 #!/bin/bash
 
+bspc node -d '^1'
+
 #mkdir -p /mnt/media_m/Music/{liked\ videos\ from\ youtube/might_need_trimming,Anime\ op\ \&\ ed/might\ need\ trimming} 
 mkdir -p /mnt/media_m/Music/Selection/{youtube/trimming,Anime/trimming} 
-
 
 cd /mnt/media_m/Music/Selection/youtube/trimming 
 yt-dlp -ci  -f 'bestaudio[ext=m4a]' --playlist-end 30 --embed-thumbnail --download-archive dl.txt  -o "%(title)s.%(ext)s" --cookies cookies.txt https://www.youtube.com/playlist\?list\=LL8597xVphIOE5AaLJLlJvFg
@@ -17,14 +18,8 @@ do
 	fi
 done
 
-
-
-
-
-
 #for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/liked\ videos\ from\ youtube/might_need_trimming/ ;done
 #for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Play/ ;done
-
 
 cd /mnt/media_m/Music/Selection/Anime/trimming
 yt-dlp -ci  -f 'bestaudio[ext=m4a]' --playlist-end 20 --embed-thumbnail --download-archive dl.txt  -o "%(title)s.%(ext)s" https://www.youtube.com/playlist?list=PLuLW3E9NVjakix7eyfBRb-tTUy3kIjOsH 
@@ -38,9 +33,6 @@ do
 		mv "${i%.*}.jpg" "/mnt/media_m/Music/album_art/${i%.*}.jpg"
 	fi
 done
-
-
-
 
 #for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Anime\ op\ \&\ ed/might\ need\ trimming/ ;done
 #for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Play/ ;done

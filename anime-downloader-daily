@@ -36,7 +36,6 @@ do
     time=$(date +%H%M)
     if [ $time -gt 2000 ]
     then
-        bspc desktop -f '^1'
         kitty -e anime-downloader &&
         del_unnecessary &&
         anime_episode_notification

@@ -2,10 +2,13 @@
 
 while true
 do
+    connection_status=$(pactl list sinks | grep "Active Port" | tail -n 1 | awk '{print $NF}')
     volume=$(amixer -D pulse get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }')
     vol=$(echo $volume | sed "s/[^0-9]//g")
-    if [ $vol -gt 55 ];then
-        dunstify -a "VOLUME HIGH" "$volume" "GOSHUJIN SAMA TURN DOWN THE VOLUME" -i "~/.config/dunst/icon/angry.png" -u "critical" -t 45000
+    if [ "$connection_status" = "analog-output-headphones" ];then
+        if [ $vol -gt 55 ];then
+            dunstify -a "VOLUME HIGH" "$volume" "GOSHUJIN SAMA TURN DOWN THE VOLUME" -i "~/.config/dunst/icon/angry.png" -u "critical" -t 45000
+        fi
     fi
     sleep 3m
 done

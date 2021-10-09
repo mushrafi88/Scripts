@@ -1,15 +1,26 @@
-#!/bin/bash
+#!/bin/zsh
 
 while true
 do
-    sorted=$(cat /tmp/temp_sort.txt | sort -k1)
-    time=$(date +%H%M)
+    rm -rf ~/Notes/tmp/temp_sort.txt
+    primary=$(cat ~/Notes/tmp/today.txt | grep "at")
+    while IFS= read -r line
+    do
+        data=$(echo "$line" | awk '{print $NF}')
+        new=$(date --date="$data today" +%s)
+        destro=$(echo "$line" | sed -e "s/^/$new /")
+        echo "$destro" >> ~/Notes/tmp/temp_sort.txt
+    done <<< "$primary"
+
+    sorted=$(cat ~/Notes/tmp/temp_sort.txt | sort -k1)
+    time=$(date + "%I:%M%P")
+    cur_time_epoch=$(date --date="$time today" +%s)
     while IFS= read -r line
     do
         ex_time=$(echo "$line" | awk '{print $1}')
-        difference=$(($time-$ex_time))
+        difference=$(($cur_time_epoch-$ex_time))
         diff=$(echo "$difference" | sed 's/^-//g')
-        if [ $diff -lt 15 ]
+        if [ "$diff" -lt 900 ]
         then
             notify=$(echo $line | sed "s/$ex_time //g")
             dunstify -a "Notes" "$notify" -u "critical" -t 45000

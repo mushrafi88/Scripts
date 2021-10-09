@@ -1,11 +1,13 @@
 #!/bin/bash
 
-rm -rf /tmp/today.txt
-rm -rf /tmp/temp_sort.txt
+rm -rf ~/Notes/tmp/today.txt
+rm -rf ~/Notes/tmp/temp_sort.txt
+
+mkdir -p ~/Notes/tmp
 
 today=$(cat ~/Notes/todo.txt | awk '/TODAY/,/END/')
 today_stream=$(echo "$today" | sed '/^$/d' | sed '1d; $d' | sed 's/^[0-9]. //g')
-echo "$today_stream" > /tmp/today.txt
+echo "$today_stream" > ~/Notes/tmp/today.txt
 weekday=$(date +"%A") 
 up_weekday=$(echo "$weekday" | tr '[:lower:]' '[:upper:]')
 
@@ -15,7 +17,7 @@ then
     weekday_task_stream=$(echo "$weekday_task" | sed '/^$/d' | sed '1d; $d' |sed 's/^[0-9]. //g')
     while IFS= read -r line
     do
-        echo "$line" >> /tmp/today.txt
+        echo "$line" >> ~/Notes/tmp/today.txt
     done <<< "$weekday_task_stream"
 fi
 
@@ -25,22 +27,13 @@ then
     everyday_task_stream=$(echo "$everyday_task" | sed '/^$/d' | sed '1d; $d' |sed 's/^[0-9]. //g')
     while IFS= read -r line
     do
-        echo "$line" >> /tmp/today.txt
+        echo "$line" >> ~/Notes/tmp/today.txt
     done <<< "$everyday_task_stream"
 fi
 
-primary=$(cat /tmp/today.txt | grep "at")
-while IFS= read -r line
-do
-  data=$(echo "$line" | awk '{print $NF}')
-  new=$(date -d"$data" +%H%M)
-  destro=$(echo "$line" | sed -e "s/^/$new /")
-  echo "$destro" >> /tmp/temp_sort.txt
-done <<< "$primary"
-
-if [ -s /tmp/today.txt ]
+if [ -s ~/Notes/tmp/today.txt ]
 then
-     notify=$(cat /tmp/today.txt | sed '/^$/d') 
+     notify=$(cat ~/Notes/tmp/today.txt | sed '/^$/d') 
      while IFS= read -r line
      do
          dunstify -a "Notes" "$line" -i "~/.config/dunst/icon/work.jpg" -t 45000

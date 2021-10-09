@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
- while true
- do 
-     time=$(date +%a)
-     if [ "$time" = "Fri" ]
-     then
-         bspc desktop -f '^1'
-         dunstify "Downloading Songs from Youtube" -i "~/.config/dunst/icon/normal.jpg" 
-         kitty -e dl-music-from-youtube
-         dunstify "Finished downloading songs from youtube" -i "~/.config/dunst/icon/normal.jpg"
-         sleep 12h
-         fi
-     sleep 1h
+while true
+do 
+    time=$(date +%a)
+    if [ "$time" = "Fri" ]
+    then
+        dunstify "Downloading Songs from Youtube" -i "~/.config/dunst/icon/normal.jpg" 
+        kitty -e dl-music-from-youtube
+        dunstify "Finished downloading songs from youtube" -i "~/.config/dunst/icon/normal.jpg"
+        sleep 12h
+        fi
+    sleep 1h
 done
