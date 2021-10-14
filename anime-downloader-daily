@@ -34,12 +34,12 @@ done
 while true
 do 
     time=$(date +%H%M)
-    if [ $time -gt 2000 ]
+    if [ $time -gt 1900 ]
     then
         kitty -e anime-downloader &&
         del_unnecessary &&
         anime_episode_notification
-        sleep 1.5h
+        sleep 1h
     fi
     sleep 30m
  done

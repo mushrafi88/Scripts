@@ -1,5 +1,5 @@
 #!/bin/bash
-bspc desktop -f '^7'
+bspc desktop -f '^6'
 
 mpd_stat=$(mpc status | awk '{ print $2 }')  
 

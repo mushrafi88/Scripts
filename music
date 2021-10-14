@@ -1,5 +1,5 @@
 #!/bin/bash
-bspc desktop -f '^7'
+bspc desktop -f '^6'
 
 spotify-stop &
 kitty -e tmux new-session -s $$ "tmux source-file ~/.config/bin/ncmpcpp-tsession" 

@@ -2,7 +2,7 @@
 
 while true
 do
-    connection_status=$(pactl list sinks | grep "Active Port" | tail -n 1 | awk '{print $NF}')
+    connection_status=$(pactl list sinks | grep "Active Port: analog-output-" | tail -n 1 | awk '{print $NF}')
     volume=$(amixer -D pulse get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }')
     vol=$(echo $volume | sed "s/[^0-9]//g")
     if [ "$connection_status" = "analog-output-headphones" ];then

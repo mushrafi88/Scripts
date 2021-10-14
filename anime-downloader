@@ -12,10 +12,17 @@ export PATH="${PATH}:$HOME/.local/bin"
 #mieriko_chan
 yt-dlp -ci -f 'bv[height=1080]+ba/b' --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/mieriko_chan/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl17reRE_OPjNhFb-IgV1aYY
 #mushoku_tensei_s2
-yt-dlp -ci -f 'bv[height=1080]+ba/b' --playlist-start 23 --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/mushoku_tensei_s2/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl01_ftoIT3birJWkpxFZkEl
+anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/mushoku_tensei_s2/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/mushoku_tensei_s2 'mushoku tensei 2nd'
+#yt-dlp -ci -f 'bv[height=1080]+ba/b' --playlist-start 23 --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/mushoku_tensei_s2/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl01_ftoIT3birJWkpxFZkEl
 #ojisan_assassin
 yt-dlp -ci -f 'bv[height=1080]+ba/b' --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/ojisan_assassin/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl0PWwz5cS6rncbDhX-J3AeV
 #komi-san
 anime dl -c 1 -p animerush -e  $((1+$(cat  /mnt/media_m/Anime/Airing/komi-san/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/komi-san 'komi-san'
 #shin-no-nakama
 anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/shin_no_nakama/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/shin_no_nakama 'shin no nakama'
+#taishou otome
+anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/taishou_otome/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/taishou_otome  'taishou otome' 
+#saihate_paladin
+anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/saihate_paladin/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/saihate_paladin 'saihate paladin'
+#kimetsu_no_yaiba
+anime dl -1 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/kimetsu_no_yaiba_s2/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/kimetsu_no_yaiba_s2 'kimetsu no yaiba mugen ressha hen'
