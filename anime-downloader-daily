@@ -34,7 +34,7 @@ done
 while true
 do 
     time=$(date +%H%M)
-    if [ $time -gt 1900 ]
+    if [ $time -gt 1900 ] || [ $time -lt 1400 ]
     then
         kitty -e anime-downloader &&
         del_unnecessary &&

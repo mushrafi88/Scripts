@@ -19,15 +19,8 @@ notify-send -t 9000 --icon=video-television "input password git done"
 #pip install -U git+https://github.com/krassowski/python-language-server.git@main
 
 pip install manga-py -U
-
-#a=$(youtube-dl --version)
-#echo "${a//.}" 
-#b=$(echo $(pip list |grep "youtube-dl" | awk '{print $2}'))
-
-if [[ $a != $b ]]; then
-	pip install youtube-dl -U 
-fi
-
+yay -S anime-downloader-git
+yay -S yt-dlp-git
 systemcleaner
 
 yay -Ps
