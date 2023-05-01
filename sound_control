@@ -1,0 +1,4 @@
+#!/bin/bash 
+
+tdrop -am -w 1905 -h 500 -y 35 -x 10 kitty -e pulsemixer
+

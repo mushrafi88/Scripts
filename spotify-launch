@@ -1,17 +1,17 @@
 #!/bin/bash
 bspc desktop -f '^6'
 
-mpd_stat=$(mpc status | awk '{ print $2 }')  
+mpd_stat=$(mpc -p 8800 status | awk '{ print $2 }')  
 
 if [ "$mpd_stat" == "n/a" ]; then
   sed -i 's/;//g' ~/.config/polybar/include-modules.ini 
   bspbar &
-  spotify 
+  LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
 else
-    mpc stop
+    mpc -p 8800 stop
     sed -i 's/;//g' ~/.config/polybar/include-modules.ini 
     bspbar &
-    spotify 
+    LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
 fi
 
 

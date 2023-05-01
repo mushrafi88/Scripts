@@ -1,6 +1,0 @@
-#!/bin/bash
-
-bspc desktop -f '^5'
-
-kitty -e tmux new-session -s $$ "tmux source-file ~/.config/bin/cpu-tsession"
-_trap_exit() { tmux kill-session -t $$; }

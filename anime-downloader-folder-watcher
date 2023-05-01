@@ -1,0 +1,10 @@
+#!/bin/bash
+
+folder="/mnt/media_m/Anime/Airing"
+
+inotifywait -m -r -e delete --format "%w%f" "${folder}" | while read file
+do
+    # Run your script here
+    python $HOME/.config/bin/anilist_update.py 
+done
+

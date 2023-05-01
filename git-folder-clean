@@ -1,15 +1,27 @@
-#!/bin/bash 
+#!/bin/bash
 
-shopt -s extglob 
+# Create the tmp directory
+mkdir /mnt/media_m/git_update_config/tmp
+
+# Copy the .git, Screenshots, and README.md files into the tmp directory
+cp -r /mnt/media_m/git_update_config/Marble/{README.md,Screenshots} /mnt/media_m/git_update_config/tmp/
+
+# Delete all files and folders in Marble except for the tmp folder
+rm -rf /mnt/media_m/git_update_config/Marble/* 
+rm -rf /mnt/media_m/git_update_config/Marble/{.zsh,.Xresources,.zshrc} 
 
 
-cd /mnt/work/git
+# Move the copied files and folders back into the Marble directory
+mv /mnt/media_m/git_update_config/tmp/README.md /mnt/media_m/git_update_config/Marble/
+mv /mnt/media_m/git_update_config/tmp/Screenshots /mnt/media_m/git_update_config/Marble/
 
-for d in ./*/ 
-do
-	(cd "$d" && rm -rf -- !(.git|README.md|Screenshots|Marble))
-done
+# Delete the tmp directory
+rm -rf /mnt/media_m/git_update_config/tmp 
 
+rm -rf /mnt/media_m/git_update_config/bin/*
 
+rm -rf /mnt/media_m/git_update_config/various-files/*
+
+rm -rf /mnt/media_m/git_update_config/various-files/{.mpd,.nano,.ncmpcpp,.sfeed,.zsh,.oh-my-zsh,.bash_history,.bash_logout,.bash_profile,.bashrc,.nanorc,.p10k.zsh,.zdirs,.zsh_history,.zshrc}
 
 

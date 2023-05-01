@@ -57,12 +57,12 @@ def mahayana(l):
     if epoch - time.time() < 2*24*3600:
         print(f'{name} Episode {episode} airing at {airing_t}')
 
-list = []
+li=[]
 
 with open('../startpage-browser/anime-list.txt', 'r') as filehandle:
     for line in filehandle:
         cur = line[:-1]
-        list.append(cur)
+        li.append(cur)
 
-for l in list:
+for l in li:
     mahayana(l)        

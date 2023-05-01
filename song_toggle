@@ -5,7 +5,7 @@ if [ $? -eq 0 ]
 then
     playerctl --player=spotify play-pause
 else 
-   mpc toggle
+   mpc -p 8800 toggle
 fi
 
 

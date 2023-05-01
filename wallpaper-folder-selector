@@ -1,4 +1,0 @@
-#!/bin/bash 
-
-a=$(ls ~/Pictures/wallpapers| rofi -dmenu -p "select wallpaper folder")
-echo "$a" > $HOME/Pictures/wallpapers/wallpaper-folder-name.txt

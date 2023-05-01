@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-cd ~/.config/bin
-while true
-    do
-        python anime_update.py > ~/.config/startpage-browser/anime-upcoming.txt
-        sleep 30m
-    done

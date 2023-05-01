@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+export PATH="${PATH}:$HOME/.local/bin"
+
+bspc node -d '^9'
+
+run=$(pgrep syncthing | head -n 1)
+if [ -z "$run" ]
+then
+       dunstify "starting syncthing" -i "~/.config/dunst/icon/love.png" -t 5000
+      /usr/bin/syncthing serve --no-browser
+
+else
+      killall -q syncthing 
+     dunstify "syncthing closed" -i "~/.config/dunst/icon/sad.png" -t 5000
+fi

@@ -1,30 +1,59 @@
 #!/bin/bash
 
-bspc node -d '^1'
+bspc node -d '^9'
 export PATH="${PATH}:$HOME/.local/bin"
 
-#youtube
-#youtube-dl -ci -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/hero_successor/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist\?list\=PLwLSw1_eDZl0KbQlqHjTn5dWFSadUHkzh
+#youtube dl 
+#yt-dlp -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/by_the_grace_of_god/%(title)s.%(ext)s" --download-archive dl.txt 'https://www.youtube.com/playlist?list=PLxSscENEp7JgZhNUrkpwoksoSLEmTqB6U'
 
-#anime
-#anime dl -c 1 -p genoanime -e $((1+$(cat  /mnt/media_m/Anime/Airing/Boku_no_hero_5/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/Boku_no_hero_5 'boku no hero academia 5th season'
+#anime downlader-vnki 
+#anime dl -c 18 -p animerush -e $((1+$(cat /mnt/media_m/Anime/Airing/isekai_ojisan/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/isekai_ojisan 'Isekai Ojisan'
 
-#mieriko_chan
-yt-dlp -ci -f 'bv[height=1080]+ba/b' --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/mieriko_chan/%(title)s.%(ext)s" --download-archive ~/dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl17reRE_OPjNhFb-IgV1aYY
-#mushoku_tensei_s2
-anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/mushoku_tensei_s2/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/mushoku_tensei_s2 'mushoku tensei 2nd'
-#yt-dlp -ci -f 'bv[height=1080]+ba/b' --playlist-start 23 --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/mushoku_tensei_s2/%(title)s.%(ext)s" --download-archive dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl01_ftoIT3birJWkpxFZkEl
-#ojisan_assassin
-yt-dlp -ci -f 'bv[height=1080]+ba/b' --write-subs --compat-options no-live-chat --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/ojisan_assassin/%(title)s.%(ext)s" --download-archive ~/dl.txt https://www.youtube.com/playlist?list=PLwLSw1_eDZl0PWwz5cS6rncbDhX-J3AeV
-#komi-san
-anime dl -c 1 -p animerush -e  $((1+$(cat  /mnt/media_m/Anime/Airing/komi-san/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/komi-san 'komi-san'
-#shin-no-nakama
-anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/shin_no_nakama/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/shin_no_nakama 'shin no nakama'
-#taishou otome
-anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/taishou_otome/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/taishou_otome  'taishou otome' 
-#saihate_paladin
-anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/saihate_paladin/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/saihate_paladin 'saihate paladin'
-#kimetsu_no_yaiba
-anime dl -1 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/kimetsu_no_yaiba_s2/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/kimetsu_no_yaiba_s2 'kimetsu no yaiba mugen ressha hen'
-#ousama_ranking
-anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/ousama_ranking/episode.txt))) --download-dir /mnt/media_m/Anime/Airing/ousama_ranking 'ousama ranking'
+# sources for animdl - animeout, animepahe, kawaiifu, marin, zoro, gogoanime, haho  
+
+
+
+#vinland_saga 
+anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/vinland_saga/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/vinland_saga  'https://www.animerush.tv/anime/Vinland-Saga-Season-2/'
+
+#oshi no ko 
+animdl download "animepahe:oshi no ko" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/-\ Oshi\ no\ Ko\ -/episode.txt)))- 
+
+#isekai_bully 
+animdl download "animepahe:i got a cheat skill in the other world" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Isekai\ de\ Cheat\ Skill\ wo\ Te\ ni\ Shita\ Ore\ wa,\ Genjitsu\ Sekai\ wo\ mo\ Musou\ Suru\ -\ \ Level\ Up\ wa\ Jinsei\ wo\ Kaeta/episode.txt)))- 
+
+# jigokuraku 
+animdl download "animepahe:jigokuraku" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Jigokuraku/episode.txt)))- 
+
+#my married life 
+animdl download "animepahe:otonari ni ginga" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Otonari\ ni\ Ginga/episode.txt)))- 
+
+# tonikaku kawaii 
+animdl download "animepahe:tonikaku kawai 2" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Tonikaku\ Kawaii\ 2nd\ Season/episode.txt)))-
+
+#konosuba bakuen 
+animdl download "animepahe:konosuba bakuen" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Kono\ Subarashii\ Sekai\ ni\ Bakuen\ wo\!/episode.txt)))- 
+
+#kimetsu no yaiba 
+animdl download "animepahe:kimetsu no yaiba swordsmith" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Kimetsu\ no\ Yaiba\ -\ \ Katanakaji\ no\ Sato-hen/episode.txt)))-
+
+#yamada- 
+animdl download "animepahe:yamada kun lv999" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Yamada-kun\ to\ Lv999\ no\ Koi\ wo\ Suru/episode.txt)))-
+
+#insomnia  mnmnt/ 
+animdl download "animepahe:kimi wa insomniac" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Kimi\ wa\ Houkago\ Insomnia/episode.txt)))- 
+
+#heavenly delusion 
+animdl download "animepahe:tengoku daimakyou" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Tengoku\ Daimakyou/episode.txt)))- 
+
+#yuusha ga shinda  
+animdl download "animepahe:yuusha ga shinda" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Yuusha\ ga\ Shinda\!/episode.txt)))- 
+
+#blue orchestra  X 
+animdl download "gogoanime:The blue orchestra" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Ao\ no\ Orchestra/episode.txt)))- 
+
+#home hero 
+yt-dlp -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/My_Home_Hero/%(title)s.%(ext)s" --download-archive dl.txt 'https://www.youtube.com/playlist?list=PLxSscENEp7Jgrs9B0sIbeAydZ-IaNhcvh'
+
+#update anilist 
+python $HOME/config/bin/anilist_update.py

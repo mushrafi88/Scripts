@@ -13,6 +13,7 @@ rm -rf ~/.cache/*
 
 sudo rm -rf /tmp/makepkg/*
 
+rm -rf ~/.local/share/Trash/*
 rm -rf ~/.stremio-server/stremio-cache/*
 rm -rf ~/.config/mpv/watch_later/*
 rm -rf ~/.thumbnails/*
@@ -21,4 +22,4 @@ rm -rf ~/.thumbnails/*
 #rm -rf ~/tmp 
 
 
-betterlockscreen -u ~/Pictures/wallpapers/dark/dark_0024.jpg 
+#betterlockscreen -u ~/Pictures/wallpapers/dark/dark_0024.jpg 

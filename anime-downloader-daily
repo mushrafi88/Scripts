@@ -10,7 +10,7 @@ do
     if [ ! -z "$e" ]; then
         if [ "$e" -gt $(cat episode.txt) ] || [ ! -f episode.txt ]
         then
-            f=$(basename $d)
+            f=$(basename "$d")
             dunstify "$f" "New episode $e" -i "~/.config/dunst/icon/love.png" -t 5000  
     		echo "$e">episode.txt
     	fi
@@ -26,7 +26,10 @@ do
     find -type f -name '*Preview*' -delete &&
     find -type f -name '*PV*' -delete &&
     find -type f -name '*Ending Theme*' -delete &&
-    find -type f -name '*Opening Theme*' -delete 
+    find -type f -name '*Opening Theme*' -delete &&
+    find -type f -name '*json*' -delete &&
+    find -type f -name '*vtt*' -delete &&
+    find -type f -name '*Promotion*' -delete 
 done
 }
 
@@ -38,8 +41,8 @@ do
     then
         kitty -e anime-downloader &&
         del_unnecessary &&
-        anime_episode_notification
+        anime_episode_notification &&
         sleep 1h
     fi
-    sleep 30m
+    sleep 5h
  done

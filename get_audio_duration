@@ -1,0 +1,6 @@
+for file in *.mp3
+do
+  l=$(echo "$file,"
+  echo -n $(ffprobe $file 2>&1 | grep 'Duration' | cut -d',' -f1 | cut -d' ' -f4 | cut -d'.' -f1))
+  echo "$l" > cat.txt
+done

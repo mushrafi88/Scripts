@@ -5,7 +5,7 @@ if [ $? -eq 0 ]
 then
     spotify-stop
 else 
-   mpc stop
+   mpc -p 8800 stop
 fi
 
 

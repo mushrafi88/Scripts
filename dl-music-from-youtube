@@ -1,43 +1,38 @@
 #!/bin/bash
 
-bspc node -d '^1'
+bspc node -d '^9'
 
 #mkdir -p /mnt/media_m/Music/{liked\ videos\ from\ youtube/might_need_trimming,Anime\ op\ \&\ ed/might\ need\ trimming} 
 mkdir -p /mnt/media_m/Music/Selection/{youtube/trimming,Anime/trimming} 
 
 cd /mnt/media_m/Music/Selection/youtube/trimming 
-yt-dlp -ci  -f 'bestaudio[ext=m4a]' --playlist-end 30 --embed-thumbnail --download-archive dl.txt  -o "%(title)s.%(ext)s" --cookies cookies.txt https://www.youtube.com/playlist\?list\=LL8597xVphIOE5AaLJLlJvFg
-source thumbnail-adder
+yt-dlp -f 'ba' -x --audio-format mp3 --embed-thumbnail --embed-metadata --download-archive dl.txt -o "%(title)s.%(ext)s" 'https://www.youtube.com/playlist?list=PLuLW3E9NVjak789Pzx4vb5_7xxfLMTNE7'
 
-for i in *.m4a
+for i in *.mp3
+do 
+    ffmpeg -i "$i" -an -c:v copy "/mnt/media_m/Music/album_art/${i%.*}.jpg"
+done 
+
+
+for i in *.mp3
 do
-	if [[ ! -f "/mnt/media_m/Music/album_art/${i%.*}.jpg" ]]
-	then
-		ffmpeg -i "${i%.*}.m4a" "${i%.*}.jpg" 
-		mv "${i%.*}.jpg" "/mnt/media_m/Music/album_art/${i%.*}.jpg"
-	fi
+    mv "$i" /mnt/media_m/Music/Selection/youtube/"$i" 
 done
-
-#for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/liked\ videos\ from\ youtube/might_need_trimming/ ;done
 #for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Play/ ;done
 
 cd /mnt/media_m/Music/Selection/Anime/trimming
-yt-dlp -ci  -f 'bestaudio[ext=m4a]' --playlist-end 20 --embed-thumbnail --download-archive dl.txt  -o "%(title)s.%(ext)s" https://www.youtube.com/playlist?list=PLuLW3E9NVjakix7eyfBRb-tTUy3kIjOsH 
+yt-dlp -f 'ba' -x --audio-format mp3 --playlist-end 20 --embed-thumbnail --embed-metadata --download-archive dl.txt  -o "%(title)s.%(ext)s" 'https://www.youtube.com/playlist?list=PLuLW3E9NVjakix7eyfBRb-tTUy3kIjOsH'
+
 source thumbnail-adder
 
-for i in *.m4a
+for i in *.mp3
 do
-	if [[ ! -f "/mnt/media_m/Music/album_art/${i%.*}.jpg" ]]
-	then
-		ffmpeg -i "${i%.*}.m4a" "${i%.*}.jpg" 
-		mv "${i%.*}.jpg" "/mnt/media_m/Music/album_art/${i%.*}.jpg"
-	fi
-done
+    ffmpeg -i "$i" -an -c:v copy "/mnt/media_m/Music/album_art/${i%.*}.jpg"
+done 
 
-#for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Anime\ op\ \&\ ed/might\ need\ trimming/ ;done
+for i in *.mp3
+do
+    mv "$i" /mnt/media_m/Music/Selection/Anime/"$i"
+done
 #for i in *.m4a; do cp "$i" /mnt/media_m/Music/Selection/Play/ ;done
 
-cd ~
-mpc clear
-mpc update
-mpc add /

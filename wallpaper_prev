@@ -1,0 +1,10 @@
+#!/bin/bash
+
+lock_file="/tmp/wallpaper_set.lock"
+
+if [ -e "$lock_file" ]; then
+  kill -USR2 $(cat "$lock_file")
+else
+  echo "set_wallpaper.sh is not running."
+fi
+

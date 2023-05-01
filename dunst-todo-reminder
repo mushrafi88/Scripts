@@ -1,24 +1,24 @@
-#!/bin/zsh
+#!/bin/bash
 
 while true
 do
-    rm -rf ~/Notes/tmp/temp_sort.txt
-    primary=$(cat ~/Notes/tmp/today.txt | grep "at")
-    while IFS= read -r line
+    primary=$(cat ~/Notes/today.txt | grep -oP ".*\s+\d+:\d+(?:am|pm)")
+    sorted=""
+    while read -r line
     do
-        data=$(echo "$line" | awk '{print $NF}')
-        new=$(date --date="$data today" +%s)
-        destro=$(echo "$line" | sed -e "s/^/$new /")
-        echo "$destro" >> ~/Notes/tmp/temp_sort.txt
+        data=$(echo "$line" | grep -oP "\d+:\d+(?:am|pm)")
+        new=$(date --date="$data" +%s)
+        destro=$(echo "$line" | sed -e "s/\s\+\([0-9]\+:[0-9]\+\(am\|pm\)\)//" -e "s/^/$new /")
+        sorted=$(echo -e "$sorted\n$destro")
     done <<< "$primary"
 
-    sorted=$(cat ~/Notes/tmp/temp_sort.txt | sort -k1)
-    time=$(date + "%I:%M%P")
+    sorted=$(echo "$sorted" | sort -k1)
+    time=$(date +"%I:%M%P")
     cur_time_epoch=$(date --date="$time today" +%s)
-    while IFS= read -r line
+    while read -r line
     do
         ex_time=$(echo "$line" | awk '{print $1}')
-        difference=$(($cur_time_epoch-$ex_time))
+        difference=$((cur_time_epoch-ex_time))
         diff=$(echo "$difference" | sed 's/^-//g')
         if [ "$diff" -lt 900 ]
         then
@@ -26,7 +26,6 @@ do
             dunstify -a "Notes" "$notify" -u "critical" -t 45000
         fi
     done <<< "$sorted"
-    sleep 5m
+    sleep 5s
 done
-
 

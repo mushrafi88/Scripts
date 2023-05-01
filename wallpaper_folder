@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# List all available wallpaper folders
+folders=("Anime Wallpapers Mobile" "current_fav" "dark" "default" "light" "nord" "retro")
+
+# Create a string with folder names separated by a newline
+folder_options=$(IFS=$'\n'; echo "${folders[*]}")
+
+# Use Rofi to prompt the user to choose a folder
+selected_folder=$(echo -e "$folder_options" | rofi -dmenu -p "Please choose a wallpaper folder:")
+
+# Save the choice to a file
+echo "$selected_folder" > ~/selected_folder.txt
+
+# Kill all instances of set_wallpaper.sh
+pkill -f wallpaper_set 
+
+rm -f /tmp/wallpaper_set.lock
+
+# Start a new instance of set_wallpaper.sh
+~/.config/bin/wallpaper_set &
