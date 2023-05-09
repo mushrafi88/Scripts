@@ -1,0 +1,11 @@
+#!/bin/bash
+
+TRACKS_FILE="/home/venerable_white/.Harmonoid/Tracks.JSON"
+PYTHON_SCRIPT="/home/venerable_white/.config/bin/harmonoid_playlist_update.py"
+
+while true; do
+    inotifywait -e close_write,moved_to,create "$TRACKS_FILE"
+    rm -rf /home/venerable_white/.Harmonoid/Temp/* 
+    python3 "$PYTHON_SCRIPT"
+done
+

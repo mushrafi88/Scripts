@@ -13,11 +13,17 @@ fi
 echo $$ > "$lock_file"
 
 # Function to set the selected folder and shuffle wallpapers
+# Function to set the selected folder and shuffle wallpapers
 load_selected_folder() {
   selected_folder=$(cat ~/selected_folder.txt)
-  selected_folder=~/Pictures/wallpapers/"$selected_folder"
+  if [ "$selected_folder" = "All" ]; then
+    selected_folder=~/Pictures/wallpapers
+  else
+    selected_folder=~/Pictures/wallpapers/"$selected_folder"
+  fi
   shuffled_wallpapers=($(find "$selected_folder" -type f \( -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' \) | shuf))
 }
+
 
 # Global variables
 current_index=0

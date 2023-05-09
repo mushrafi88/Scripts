@@ -24,7 +24,7 @@ rm -rf /mnt/media_m/git_update_config/Marble/qutebrowser/backup
 rm -rf /mnt/media_m/git_update_config/Marble/transmission/{torrents,blocklists,resume}
 
 #bin 
-\cp -r -v ~/.config/bin/* /mnt/media_m/git_update_config/bin/ 
+\cp -r -v ~/.config/bin/* /mnt/media_m/git_update_config/Scripts/ 
 
 # various-files
 \cp -r -u -v ~/sugar_level_tracker_cli/sugar_chart.csv /mnt/work/git/various-files/

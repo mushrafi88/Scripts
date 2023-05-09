@@ -18,7 +18,7 @@ mv /mnt/media_m/git_update_config/tmp/Screenshots /mnt/media_m/git_update_config
 # Delete the tmp directory
 rm -rf /mnt/media_m/git_update_config/tmp 
 
-rm -rf /mnt/media_m/git_update_config/bin/*
+rm -rf /mnt/media_m/git_update_config/Scripts/*
 
 rm -rf /mnt/media_m/git_update_config/various-files/*
 

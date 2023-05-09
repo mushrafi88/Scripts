@@ -1,11 +1,5 @@
 #!/bin/bash
 
-playerctl --player=spotify status > /dev/null
-if [ $? -eq 0 ]
-then
-    playerctl --player=spotify previous
-else 
-   mpc -p 8800 prev
-fi
-
+player=$(playerctl -l)
+playerctl --player="$player" previous
 

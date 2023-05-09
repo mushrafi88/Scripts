@@ -1,13 +1,6 @@
 #!/bin/bash
 
-playerctl --player=spotify status > /dev/null
-if [ $? -eq 0 ]
-then
-    spotify-stop
-else 
-   mpc -p 8800 stop
-fi
+player=$(playerctl -l)
 
-
-
+playerctl --player="$player" stop
 

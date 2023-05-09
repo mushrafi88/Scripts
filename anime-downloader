@@ -14,7 +14,7 @@ export PATH="${PATH}:$HOME/.local/bin"
 
 
 #vinland_saga 
-anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/vinland_saga/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/vinland_saga  'https://www.animerush.tv/anime/Vinland-Saga-Season-2/'
+#anime dl -c 1 -p vidstream -e $((1+$(cat /mnt/media_m/Anime/Airing/vinland_saga/episode.txt))): --download-dir /mnt/media_m/Anime/Airing/vinland_saga  'https://www.animerush.tv/anime/Vinland-Saga-Season-2/'
 
 #oshi no ko 
 animdl download "animepahe:oshi no ko" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/-\ Oshi\ no\ Ko\ -/episode.txt)))- 
@@ -51,6 +51,9 @@ animdl download "animepahe:yuusha ga shinda" -d /mnt/media_m/Anime/Airing/ --ind
 
 #blue orchestra  X 
 animdl download "gogoanime:The blue orchestra" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Ao\ no\ Orchestra/episode.txt)))- 
+
+#the dangers in my heart 
+animdl download "animepahe:The dangers in my heart" -d /mnt/media_m/Anime/Airing/ --index 1 -r $((1+$(cat /mnt/media_m/Anime/Airing/Boku\ no\ Kokoro\ no\ Yabai\ Yatsu/episode.txt)))- 
 
 #home hero 
 yt-dlp -f 'bestvideo[height=1080]+bestaudio/best' --write-sub --embed-subs --yes-playlist -o "/home/venerable_white/Videos/Anime/Airing/My_Home_Hero/%(title)s.%(ext)s" --download-archive dl.txt 'https://www.youtube.com/playlist?list=PLxSscENEp7Jgrs9B0sIbeAydZ-IaNhcvh'
